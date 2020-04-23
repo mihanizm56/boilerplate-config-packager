@@ -1,0 +1,19 @@
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# build
+/build
+
+# envs
+/.env
+
+# ide
+.idea
+.vscode
+
+# Misc
+.DS_Store
