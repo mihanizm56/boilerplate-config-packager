@@ -2,8 +2,13 @@
 
 const path = require('path');
 const Copier = require('@mihanizm56/node-file-copier');
-const { exec, writeFile } = require('./fs-promises');
+const { exec, writeFile } = require('./utils/fs-promises');
+const { getConsoleArgs } = require('./utils/get-args')
 const commandsFile = require('./commands/commands.json');
+
+const flags = getConsoleArgs(process.argv);
+
+const configPath = flags['--eu-mod'] ? 'eu' : 'ru';
 
 const fromFolder = path.join(
   process.cwd(),
@@ -11,6 +16,7 @@ const fromFolder = path.join(
   '@wildberries',
   'boilerplate-config-packager',
   'lib',
+  configPath
 );
 
 const toFolder = path.join(process.cwd(), 'config');
@@ -58,11 +64,11 @@ const runPackage = async () => {
 
     copier.activate();
 
-    console.log('(config-packager): start to patch package.json');
+    // console.log('(config-packager): start to patch package.json');
 
     // await addPackageJsonCommands(); todo add
 
-    await exec('npm uninstall @wildberries/boilerplate-config-packager');
+    // await exec('npm uninstall @wildberries/boilerplate-config-packager');
 
     // console.log('(config-packager): start install cli packages');
 
