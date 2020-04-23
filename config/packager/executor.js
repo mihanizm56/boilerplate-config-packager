@@ -34,7 +34,7 @@ const runPackage = async () => {
     console.log('(config-packager): start to execute');
 
     await exec(
-      'npm install @wildberries/boilerplate-config-packager@0.0.2-beta.10',
+      'npm install @wildberries/boilerplate-config-packager@0.0.2-beta.11',
     );
 
     console.log('(config-packager): start to copy');

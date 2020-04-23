@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/boilerplate-config-packager",
-  "version": "0.0.2-beta.10",
+  "version": "0.0.2-beta.11",
   "description": "boilerplate cli-executor",
   "scripts": {
     "lint": "npx eslint ./config/packager --ext .js --fix",
@@ -41,8 +41,7 @@
     }
   },
   "files": [
-    "lib/ru/",
-    "lib/eu/",
+    "lib/",
     "config/packager/",
     "node_modules/@mihanizm56/node-file-copier/"
   ],
