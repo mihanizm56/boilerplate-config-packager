@@ -38,11 +38,11 @@ const runPackage = async () => {
 
     await packageJsonPatch(configParameter);
 
-    console.log('(cli): package.json patched successfuly');
+    console.log('(config-packager): package.json patched successfuly');
 
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
 
-    console.log('(config-packager): start install cli packages');
+    console.log('(config-packager): start install config packages');
 
     await exec('npm install');
 
