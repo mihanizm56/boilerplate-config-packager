@@ -38,6 +38,8 @@ const runPackage = async () => {
 
     await packageJsonPatch(configParameter);
 
+    console.log('(cli): package.json patched successfuly');
+
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
 
     console.log('(config-packager): start install cli packages');
@@ -46,7 +48,7 @@ const runPackage = async () => {
 
     console.log('(config-packager): installed successfully');
   } catch (error) {
-    console.log("error when executing the package", error); // eslint-disable-line
+    console.log('error when executing the package', error);
   }
 };
 
