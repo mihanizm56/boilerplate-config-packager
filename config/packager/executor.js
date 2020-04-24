@@ -4,15 +4,11 @@ const path = require('path');
 const Copier = require('@mihanizm56/node-file-copier');
 const { exec } = require('./utils/fs-promises');
 const { getConsoleArgs } = require('./utils/get-args');
-const {
-  packageJsonPatchEU,
-  packageJsonPatchRU,
-} = require('./utils/package-json-patch');
+const { packageJsonPatch } = require('./utils/package-json-patch');
 
 const flags = getConsoleArgs(process.argv);
 
-const configPath = flags.euro ? 'eu' : 'ru';
-const packageJsonPatch = flags.euro ? packageJsonPatchEU : packageJsonPatchRU;
+const configParameter = flags.euro ? 'eu' : 'ru';
 
 const fromFolder = path.join(
   process.cwd(),
@@ -20,7 +16,7 @@ const fromFolder = path.join(
   '@wildberries',
   'boilerplate-config-packager',
   'lib',
-  configPath,
+  configParameter,
 );
 
 const toFolder = path.join(process.cwd(), 'config');
@@ -40,7 +36,7 @@ const runPackage = async () => {
 
     console.log('(config-packager): start to patch package.json');
 
-    await packageJsonPatch();
+    await packageJsonPatch(configParameter);
 
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
 
