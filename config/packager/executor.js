@@ -41,12 +41,6 @@ const runPackage = async () => {
     console.log('(config-packager): package.json patched successfuly');
 
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
-
-    console.log('(config-packager): start install config packages');
-
-    await exec('npm install');
-
-    console.log('(config-packager): installed successfully');
   } catch (error) {
     console.log('error when executing the package', error);
   }
