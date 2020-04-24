@@ -10,17 +10,26 @@ const flags = getConsoleArgs(process.argv);
 
 const configParameter = flags.euro ? 'eu' : 'ru';
 
-const fromFolder = path.join(
+const packageRootDir = path.join(
   process.cwd(),
   'node_modules',
   '@wildberries',
   'boilerplate-config-packager',
   'lib',
-  configParameter,
 );
 
-const toFolder = path.join(process.cwd(), 'config');
-const arrayToCopy = [{ from: fromFolder, to: toFolder }];
+const configsDir = path.join(packageRootDir, configParameter, 'config');
+
+const additionalFilesDir = path.join(
+  packageRootDir,
+  configParameter,
+  'additional-files',
+);
+
+const arrayToCopy = [
+  { from: configsDir, to: path.join(process.cwd(), 'config') },
+  { from: additionalFilesDir, to: process.cwd() },
+];
 
 const copier = new Copier({ arrayToCopy });
 
