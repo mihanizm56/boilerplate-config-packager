@@ -17,6 +17,7 @@ const fromFolder = path.join(
   'boilerplate-config-packager',
   'lib',
   configParameter,
+  './',
 );
 
 const toFolder = path.join(process.cwd(), 'config');
