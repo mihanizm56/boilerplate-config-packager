@@ -1,10 +1,11 @@
 const path = require('path');
-const commandsFile = require('../commands/commands.json');
+const commandsFileEU = require('../commands/commands-eu.json');
+const commandsFileRU = require('../commands/commands-ru.json');
 const { writeFile } = require('./fs-promises');
 
 module.exports.packageJsonPatchEU = async () => {
   try {
-    const { scripts, devDependencies, dependencies } = commandsFile;
+    const { scripts, devDependencies, dependencies } = commandsFileEU;
 
     const packageJsonProjectFile = require(path.join(process.cwd(),'package.json')); // eslint-disable-line
 
@@ -19,16 +20,6 @@ module.exports.packageJsonPatchEU = async () => {
         ...packageJsonProjectFile.devDependencies,
         ...devDependencies,
       },
-      husky: {
-        hooks: {
-          'commit-msg':
-            'commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js',
-          'pre-commit':
-            'node cli/_utils/ci-utils/executor.js --command=check-full',
-          'prepare-commit-msg': 'node config/git/prepare-commit.js',
-        },
-      },
-      'config-overrides-path': 'config/webpack/config-overrides.js',
     };
 
     await writeFile(
@@ -43,7 +34,7 @@ module.exports.packageJsonPatchEU = async () => {
 
 module.exports.packageJsonPatchRU = async () => {
   try {
-    const { scripts, devDependencies, dependencies } = commandsFile;
+    const { scripts, devDependencies, dependencies } = commandsFileRU;
 
     const packageJsonProjectFile = require(path.join(process.cwd(),'package.json')); // eslint-disable-line
 
@@ -58,16 +49,6 @@ module.exports.packageJsonPatchRU = async () => {
         ...packageJsonProjectFile.devDependencies,
         ...devDependencies,
       },
-      husky: {
-        hooks: {
-          'commit-msg':
-            'commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js',
-          'pre-commit':
-            'node cli/_utils/ci-utils/executor.js --command=check-full',
-          'prepare-commit-msg': 'node config/git/prepare-commit.js',
-        },
-      },
-      'config-overrides-path': 'config/webpack/config-overrides.js',
     };
 
     await writeFile(

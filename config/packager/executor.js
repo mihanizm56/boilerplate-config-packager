@@ -24,7 +24,6 @@ const fromFolder = path.join(
 );
 
 const toFolder = path.join(process.cwd(), 'config');
-
 const arrayToCopy = [{ from: fromFolder, to: toFolder }];
 
 const copier = new Copier({ arrayToCopy });
@@ -33,9 +32,7 @@ const runPackage = async () => {
   try {
     console.log('(config-packager): start to execute');
 
-    await exec(
-      'npm install @wildberries/boilerplate-config-packager@0.0.2-beta.11',
-    );
+    await exec('npm install @wildberries/boilerplate-config-packager');
 
     console.log('(config-packager): start to copy');
 
