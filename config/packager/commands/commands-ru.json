@@ -11,6 +11,7 @@
     "@wildberries/redux-core-modules": "0.0.8",
     "@wildberries/ui-kit": "0.0.1-beta.18",
     "@wildberries/validators": "0.0.3",
+    "@wildberries/service-router": "0.0.9",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "babel-polyfill": "6.26.0",
