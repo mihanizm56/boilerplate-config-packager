@@ -1,12 +1,12 @@
 #!/bin/bash
 
-UNIT=infrastructure
+UNIT=portals
 PROJECT_NAME='front'
 K8S_KLUSTER=$1
 REPO_NAME=$2
 DEPLOY_TOKEN=$3
 NAMESPACE=$REPO_NAME
-VERSION=v0.0.1
+VERSION=v0.0.1-${K8S_KLUSTER}
 
 if [ ! "$K8S_KLUSTER" -o "$K8S_KLUSTER" == 'undefined' ];
 then
@@ -14,20 +14,21 @@ then
   echo -en "\033[40;1;41m K8S_KLUSTER $K8S_KLUSTER \033[0m\n"
 fi
 
-if [ ! "$DEPLOY_TOKEN" -o "$DEPLOY_TOKEN" == 'undefined' ];
-then
-  echo -en "\n\033[40;1;41m Error - not correct deploy token \033[0m\n"
-  echo -en "\033[40;1;41m DEPLOY_TOKEN $DEPLOY_TOKEN \033[0m\n"
-  echo -en "\033[40;1;41m To fix that - please run npm run setup \033[0m\n"
-fi
-
 if [ ! "$REPO_NAME" -o "$REPO_NAME" == 'undefined' ];
 then
   echo -en "\n\033[40;1;41m Error - not correct repo name \033[0m\n"
   echo -en "\033[40;1;41m REPO_NAME $REPO_NAME \033[0m\n"
+  echo -en "\033[40;1;41m To fix that - please run npm run setup if you have cli \033[0m\n"
 fi
 
-if [ ! "$1" -o "$1" == 'undefined' -o ! "$2" -o "$2" == 'undefined' -o ! "$3" -o "$3" == 'undefined' -o ! "$4" -o "$4" == 'undefined'  ];
+if [ ! "$DEPLOY_TOKEN" -o "$DEPLOY_TOKEN" == 'undefined' ];
+then
+  echo -en "\n\033[40;1;41m Error - not correct deploy token \033[0m\n"
+  echo -en "\033[40;1;41m DEPLOY_TOKEN $DEPLOY_TOKEN \033[0m\n"
+  echo -en "\033[40;1;41m To fix that - please run npm run setup if you have cli \033[0m\n"
+fi
+
+if [ ! "$1" -o "$1" == 'undefined' -o ! "$2" -o "$2" == 'undefined' -o ! "$3" -o "$3" == 'undefined' ];
 then
   exit 2
 fi
@@ -166,7 +167,7 @@ project_token: ${DEPLOY_TOKEN}
 images:
   - dockerfile: ./config/deploy/Dockerfile
     context: .
-    name: ${PROJECT_NAME}
+    name: ${REPO_NAME}
     build:
       - option: --ulimit
         value: nofile=262144:262144
@@ -179,19 +180,14 @@ images:
       - option: --build-arg
         value: GOOS=\${GOOS}
       - option: --build-arg
-        value: PROJECT_NAME=${PROJECT_NAME}
+        value: BINARY_NAME=${REPO_NAME}
 _EOF_
-
-if [ "${DRY_RUN}" == "true" ];
-then
-	exit 0
-fi
 
 git add "."
 HUSKY_SKIP_HOOKS=1 git commit -m "'update tag $NEW_TAG'"
 git tag -m "'$NEW_TAG'" -a "$NEW_TAG"
 git push --follow-tags
 
-echo -en "\n PROJECT_NAME: \e[40;1;42m $PROJECT_NAME \e[m\n"
+echo -en "\n REPO_NAME: \e[40;1;42m $REPO_NAME \e[m\n"
 echo -en "\n K8S_KLUSTER: \e[40;1;42m $K8S_KLUSTER \e[m\n"
 echo -en "\n Tag is pushed: \e[40;1;42m $NEW_TAG \e[m\n"

@@ -180,7 +180,7 @@ images:
       - option: --build-arg
         value: GOOS=\${GOOS}
       - option: --build-arg
-        value: REPO_NAME=${REPO_NAME}
+        value: BINARY_NAME=${REPO_NAME}
 _EOF_
 
 git add "."
