@@ -1,19 +1,12 @@
 #!/bin/bash
 
 UNIT=infrastructure
+PROJECT_NAME='front'
 K8S_KLUSTER=$1
 REPO_NAME=$2
 DEPLOY_TOKEN=$3
-PROJECT_NAME=$4
 NAMESPACE=$REPO_NAME
 VERSION=v0.0.1-${K8S_KLUSTER}
-
-if [ ! "$PROJECT_NAME" -o "$PROJECT_NAME" == 'undefined' ];
-then
-  echo -en "\n\033[40;1;41m Error - not correct project name \033[0m\n"
-  echo -en "\033[40;1;41m PROJECT_NAME $PROJECT_NAME \033[0m\n"
-  echo -en "\033[40;1;41m To fix that - please run npm run setup \033[0m\n"
-fi
 
 if [ ! "$K8S_KLUSTER" -o "$K8S_KLUSTER" == 'undefined' ];
 then

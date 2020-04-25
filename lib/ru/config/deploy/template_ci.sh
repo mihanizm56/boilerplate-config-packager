@@ -1,7 +1,7 @@
 #!/bin/bash
 
 UNIT=infrastructure
-
+PROJECT_NAME='front'
 K8S_KLUSTER=$1
 REPO_NAME=$2
 DEPLOY_TOKEN=$3
@@ -16,14 +16,14 @@ fi
 
 if [ ! "$REPO_NAME" -o "$REPO_NAME" == 'undefined' ];
 then
-  echo -en "\n\033[40;1;41m Error - not correct project name \033[0m\n"
+  echo -en "\n\033[40;1;41m Error - not correct repo name \033[0m\n"
   echo -en "\033[40;1;41m REPO_NAME $REPO_NAME \033[0m\n"
   echo -en "\033[40;1;41m To fix that - please run npm run setup if you have cli \033[0m\n"
 fi
 
-if [ ! "$NAMESPACE" -o "$NAMESPACE" == 'undefined' ];
+if [ ! "$DEPLOY_TOKEN" -o "$DEPLOY_TOKEN" == 'undefined' ];
 then
-  echo -en "\n\033[40;1;41m Error - not correct project cicd token \033[0m\n"
+  echo -en "\n\033[40;1;41m Error - not correct deploy token \033[0m\n"
   echo -en "\033[40;1;41m DEPLOY_TOKEN $DEPLOY_TOKEN \033[0m\n"
   echo -en "\033[40;1;41m To fix that - please run npm run setup if you have cli \033[0m\n"
 fi
@@ -40,17 +40,17 @@ read -ra ADDR <<<"$PREV_TAG"
 LEN=${#ADDR[@]}
 LAST_INDEX=${ADDR[$LEN - 1]}
 NEXT_INDEX=$((LAST_INDEX + 1))
-NEW_TAG="${VERSION}-front-${NEXT_INDEX}"
+NEW_TAG="${VERSION}-${PROJECT_NAME}-${NEXT_INDEX}"
 
-mkdir -p ./k8s/v1/front/base/
-mkdir -p ./k8s/v1/front/overlays/${K8S_KLUSTER}
+mkdir -p ./k8s/v1/${PROJECT_NAME}/base/
+mkdir -p ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}
 
-cat << _EOF_ > ./k8s/v1/front/base/deployment.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: ${NAMESPACE}
-  name: front
+  name: ${PROJECT_NAME}
 spec:
   replicas: 1
   strategy:
@@ -60,12 +60,12 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: front
+      app: ${PROJECT_NAME}
   template:
     metadata:
-      name: front
+      name: ${PROJECT_NAME}
       labels:
-        app: front
+        app: ${PROJECT_NAME}
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/path: "/metrics"
@@ -79,11 +79,11 @@ spec:
                     - key: app
                       operator: In
                       values:
-                        - front
+                        - ${PROJECT_NAME}
                 topologyKey: rack
               weight: 100
       containers:
-        - name: front
+        - name: ${PROJECT_NAME}
           image: git.wildberries.ru:4567/portals/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
           ports:
             - containerPort: 80
@@ -95,17 +95,17 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: ${NAMESPACE}
-  name: front
+  name: ${PROJECT_NAME}
 spec:
   selector:
-    app: front
+    app: ${PROJECT_NAME}
   ports:
     - port: 80
       targetPort: 80
   type: ClusterIP
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/front/base/gitlab-registry-secret.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/gitlab-registry-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -116,13 +116,13 @@ data:
 type: kubernetes.io/dockerconfigjson
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/front/base/kustomization.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/kustomization.yaml
 resources:
   - deployment.yaml
   - gitlab-registry-secret.yaml
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/front/overlays/${K8S_KLUSTER}/kustomization.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/kustomization.yaml
 resources:
   - namespace.yaml
 bases:
@@ -131,26 +131,26 @@ patches:
   - patch.yaml
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/front/overlays/${K8S_KLUSTER}/namespace.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/namespace.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
   name: ${NAMESPACE}
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/front/overlays/${K8S_KLUSTER}/patch.yaml
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: ${NAMESPACE}
-  name: front
+  name: ${PROJECT_NAME}
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - name: front
+        - name: ${PROJECT_NAME}
           image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
           resources:
             limits:
