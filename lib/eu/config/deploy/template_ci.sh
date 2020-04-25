@@ -83,7 +83,7 @@ spec:
               weight: 100
       containers:
         - name: ${PROJECT_NAME}
-          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${PROJECT_NAME}:${NEW_TAG}
+          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
           ports:
             - containerPort: 80
           env: []
@@ -150,7 +150,7 @@ spec:
     spec:
       containers:
         - name: ${PROJECT_NAME}
-          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${PROJECT_NAME}:${NEW_TAG}
+          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
           resources:
             limits:
               memory: "128Mi"
