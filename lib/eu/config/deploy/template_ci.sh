@@ -6,7 +6,7 @@ K8S_KLUSTER=$1
 REPO_NAME=$2
 DEPLOY_TOKEN=$3
 NAMESPACE=$REPO_NAME
-VERSION=v0.0.1-${K8S_KLUSTER}
+VERSION=v0.0.1
 
 if [ ! "$K8S_KLUSTER" -o "$K8S_KLUSTER" == 'undefined' ];
 then
@@ -39,7 +39,7 @@ read -ra ADDR <<<"$PREV_TAG"
 LEN=${#ADDR[@]}
 LAST_INDEX=${ADDR[$LEN - 1]}
 NEXT_INDEX=$((LAST_INDEX + 1))
-NEW_TAG="${VERSION}-${PROJECT_NAME}-${NEXT_INDEX}"
+NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
 
 mkdir -p ./k8s/v1/${PROJECT_NAME}/base/
 mkdir -p ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}
