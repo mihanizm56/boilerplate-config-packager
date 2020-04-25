@@ -162,7 +162,7 @@ cat << _EOF_ > ./deploy-service-client.conf.yaml
 deploy_service_address: http://api.deploy-service.svc.k8s.datapro
 deploy_service_auth_address: http://api.deploy-service.svc.k8s.datapro
 manifests_path: k8s
-project_token: <enter your project token>
+project_token: ${DEPLOY_TOKEN}
 images:
   - dockerfile: ./config/deploy/Dockerfile
     context: .
