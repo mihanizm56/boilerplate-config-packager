@@ -1,22 +1,11 @@
 #!/bin/bash
 
-REACT_APP_ROUTER_PREFIX=$1
-
-if [ ! "$1" -o "$1" == 'undefined' ];
-then
-  echo -en "\n\033[40;1;41m Error - not correct env for default route \033[0m\n"
-  echo -en "\033[40;1;41m REACT_APP_ROUTER_PREFIX $REACT_APP_ROUTER_PREFIX \033[0m\n"
-    exit 2
-fi
-
 cat << _EOF_ > ./config/deploy/Dockerfile
 FROM node:12.13.0-alpine as builder
 
 RUN mkdir -p /app
 
 WORKDIR /app
-
-ENV REACT_APP_ROUTER_PREFIX ${REACT_APP_ROUTER_PREFIX}
 
 COPY package-lock.json /app/package-lock.json
 COPY package.json /app/package.json
