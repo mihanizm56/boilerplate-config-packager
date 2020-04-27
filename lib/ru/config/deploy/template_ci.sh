@@ -1,18 +1,20 @@
 #!/bin/bash
 
 UNIT=portals
+REPO_NAME=$1
+DEPLOY_TOKEN=$2
 PROJECT_NAME='front'
-K8S_KLUSTER=$1
-REPO_NAME=$2
-DEPLOY_TOKEN=$3
 NAMESPACE=$REPO_NAME
+KLUSTER_ARRAY=($4 $5 $6 $7)
 VERSION=v0.0.1
 
-if [ ! "$K8S_KLUSTER" -o "$K8S_KLUSTER" == 'undefined' ];
-then
-  echo -en "\n\033[40;1;41m Error - not correct k8s cluster name \033[0m\n"
-  echo -en "\033[40;1;41m K8S_KLUSTER $K8S_KLUSTER \033[0m\n"
-fi
+PREV_TAG=$(git describe --abbrev=0 --tags)
+IFS='-'
+read -ra ADDR <<<"$PREV_TAG"
+
+LEN=${#ADDR[@]}
+LAST_INDEX=${ADDR[$LEN - 1]}
+NEXT_INDEX=$((LAST_INDEX + 1))
 
 if [ ! "$REPO_NAME" -o "$REPO_NAME" == 'undefined' ];
 then
@@ -28,19 +30,14 @@ then
   echo -en "\033[40;1;41m To fix that - please run npm run setup if you have cli \033[0m\n"
 fi
 
-if [ ! "$1" -o "$1" == 'undefined' -o ! "$2" -o "$2" == 'undefined' -o ! "$3" -o "$3" == 'undefined' ];
+for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
+do
+  NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
+
+if [ ! "$1" -o "$1" == 'undefined' -o ! "$2" -o "$2" == 'undefined' ];
 then
   exit 2
 fi
-
-PREV_TAG=$(git describe --abbrev=0 --tags)
-IFS='-'
-read -ra ADDR <<<"$PREV_TAG"
-
-LEN=${#ADDR[@]}
-LAST_INDEX=${ADDR[$LEN - 1]}
-NEXT_INDEX=$((LAST_INDEX + 1))
-NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
 
 mkdir -p ./k8s/v1/${PROJECT_NAME}/base/
 mkdir -p ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}
@@ -84,10 +81,8 @@ spec:
               weight: 100
       containers:
         - name: ${PROJECT_NAME}
-          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
-          ports:
-            - containerPort: 80
-          env: []
+          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${VERSION}-dataline-${NEXT_INDEX}
+          env:
       imagePullSecrets:
         - name: gitlab-registry-secret
 ---
@@ -138,6 +133,8 @@ metadata:
   name: ${NAMESPACE}
 _EOF_
 
+if [  "$K8S_KLUSTER" == 'test' -o "$K8S_KLUSTER" == 'stage' ];
+then
 cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml
 ---
 apiVersion: apps/v1
@@ -148,6 +145,10 @@ metadata:
 spec:
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: front
+        version: ${NEW_TAG}
     spec:
       containers:
         - name: ${PROJECT_NAME}
@@ -156,7 +157,49 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "0.1"
+          env:
+            - name: ENDPOINT_MISMATCH
+              value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
+            - name: IP_LIMIT
+              value: "10000"
+            - name: SERVER_PORT
+              value: "80"
 _EOF_
+fi
+
+if [  "$K8S_KLUSTER" == 'dataline' -o "$K8S_KLUSTER" == 'datapro' ];
+then
+cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ${NAMESPACE}
+  name: ${PROJECT_NAME}
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: front
+        version: ${NEW_TAG}
+    spec:
+      containers:
+        - name: ${PROJECT_NAME}
+          image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${NEW_TAG}
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          env:
+            - name: ENDPOINT_MISMATCH
+              value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
+            - name: IP_LIMIT
+              value: "10000"
+            - name: SERVER_PORT
+              value: "80"
+_EOF_
+fi
 
 cat << _EOF_ > ./deploy-service-client.conf.yaml
 ---
@@ -183,11 +226,21 @@ images:
         value: BINARY_NAME=${REPO_NAME}
 _EOF_
 
+echo -en "\n \e[40;1;42m k8s folder generated for cluster ${K8S_KLUSTER}  \e[m\n"
+done
+
 git add "."
-HUSKY_SKIP_HOOKS=1 git commit -m "'update tag $NEW_TAG'"
-git tag -m "'$NEW_TAG'" -a "$NEW_TAG"
+HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
+
+for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
+do
+  NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
+  git tag -m "'$NEW_TAG'" -a "$NEW_TAG"
+  echo -en "\n Tag is created: \e[40;1;42m $NEW_TAG \e[m\n"
+done
+
 git push --follow-tags
 
-echo -en "\n REPO_NAME: \e[40;1;42m $REPO_NAME \e[m\n"
-echo -en "\n K8S_KLUSTER: \e[40;1;42m $K8S_KLUSTER \e[m\n"
-echo -en "\n Tag is pushed: \e[40;1;42m $NEW_TAG \e[m\n"
+echo -en "\n Deployed repo: \e[40;1;42m $REPO_NAME \e[m\n"
+
+
