@@ -228,11 +228,12 @@ _EOF_
 echo -en "\n \e[40;1;42m k8s folder generated for cluster ${K8S_KLUSTER}  \e[m\n"
 done
 
-if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
-then
+# for temploy
+# if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+# then
   git add "."
   HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
-fi
+# fi
 
 for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
 do
@@ -244,10 +245,11 @@ done
 git push --follow-tags --no-verify
 
 
-if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
-then
+# for temploy
+# if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+# then
   echo -en "\n Deployed repo: \e[40;1;42m $REPO_NAME \e[m\n"
-fi
+# fi
 
 
 

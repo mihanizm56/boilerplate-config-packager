@@ -17,6 +17,16 @@ LEN=${#ADDR[@]}
 LAST_INDEX=${ADDR[$LEN - 1]}
 NEXT_INDEX=$((LAST_INDEX + 1))
 
+# for temploy
+# if [[ "$IS_WITHOUT_COMMIT" && "$IS_WITHOUT_COMMIT" != 'undefined' ]];
+# then
+#   echo "RUNNING TEMPLOY"
+#   echo PROJECT_NAME="front_$RANDOM"
+#   echo -en "\n \e[40;1;42m PROJECT_NAME prefix is : $PROJECT_NAME \e[m\n"
+
+#   git push --no-verify
+# fi
+
 if [ ! "$REPO_NAME" -o "$REPO_NAME" == 'undefined' ];
 then
   echo -en "\n\033[40;1;41m Error - not correct repo name \033[0m\n"
@@ -230,11 +240,12 @@ _EOF_
 echo -en "\n \e[40;1;42m k8s folder generated for cluster ${K8S_KLUSTER}  \e[m\n"
 done
 
-if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
-then
+# for temploy
+# if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+# then
   git add "."
   HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
-fi
+# fi
 
 for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
 do
@@ -245,9 +256,10 @@ done
 
 git push --follow-tags --no-verify
 
-if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
-then
+# for temploy
+# if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+# then
   echo -en "\n Deployed repo: \e[40;1;42m $REPO_NAME \e[m\n"
-fi
+# fi
 
 
