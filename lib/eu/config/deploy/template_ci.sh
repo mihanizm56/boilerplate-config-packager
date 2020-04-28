@@ -241,7 +241,7 @@ do
   echo -en "\n Tag is created: \e[40;1;42m $NEW_TAG \e[m\n"
 done
 
-git push --follow-tags
+git push --follow-tags --no-verify
 
 
 if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
