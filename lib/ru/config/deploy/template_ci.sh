@@ -43,6 +43,9 @@ fi
 
 for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
 do
+  if [[ "$K8S_KLUSTER" && "$K8S_KLUSTER" != 'undefined' ]];
+  then
+  
   NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
 
 if [ ! "$1" -o "$1" == 'undefined' -o ! "$2" -o "$2" == 'undefined' ];
@@ -238,6 +241,8 @@ images:
 _EOF_
 
 echo -en "\n \e[40;1;42m k8s folder generated for cluster ${K8S_KLUSTER}  \e[m\n"
+
+  fi
 done
 
 # for temploy
