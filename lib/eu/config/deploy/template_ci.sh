@@ -166,10 +166,6 @@ spec:
           env:
             - name: ENDPOINT_MISMATCH
               value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
-            - name: IP_LIMIT
-              value: "10000"
-            - name: SERVER_PORT
-              value: "80"
 _EOF_
 fi
 
@@ -200,10 +196,6 @@ spec:
           env:
             - name: ENDPOINT_MISMATCH
               value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
-            - name: IP_LIMIT
-              value: "10000"
-            - name: SERVER_PORT
-              value: "80"
 _EOF_
 fi
 
