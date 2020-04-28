@@ -33,7 +33,7 @@ lint:
     - linux
   stage: tests_bundle
   script:
-    - node ./config/ink/_utils/ci-utils/executor.js --command=lint-full
+    - node ./cli/_utils/ci-utils/executor.js --command=lint-full
 
 test:
   tags:
@@ -41,7 +41,7 @@ test:
     - linux
   stage: tests_bundle
   script:
-    - node ./config/ink/_utils/ci-utils/executor.js --command=test
+    - node ./cli/_utils/ci-utils/executor.js --command=test
 
 npm_ckeck_vulnerabilities:
   tags:
@@ -49,7 +49,7 @@ npm_ckeck_vulnerabilities:
     - linux
   stage: tests_bundle
   script:
-    - node ./config/ink/_utils/ci-utils/executor.js --command=check-npm-packages
+    - node ./cli/_utils/ci-utils/executor.js --command=check-npm-packages
 
 build:
   tags:
@@ -57,7 +57,7 @@ build:
     - linux
   stage: tests_bundle
   script:
-    - node ./config/ink/_utils/ci-utils/executor.js --command=build
+    - node ./cli/_utils/ci-utils/executor.js --command=build
   artifacts:
     paths:
       - build/
@@ -69,7 +69,7 @@ integration-tests:
   stage: integration-tests
   image: circleci/node:12.13-browsers
   script:
-    - node ./config/ink/_utils/ci-utils/executor.js --command=integration-tests
+    - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 release:
   tags:
