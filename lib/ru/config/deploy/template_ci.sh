@@ -6,6 +6,7 @@ DEPLOY_TOKEN=$2
 PROJECT_NAME='front'
 NAMESPACE=$REPO_NAME
 KLUSTER_ARRAY=($4 $5 $6 $7)
+IS_WITHOUT_COMMIT=$8
 VERSION=v0.0.1
 
 PREV_TAG=$(git describe --abbrev=0 --tags)
@@ -229,8 +230,11 @@ _EOF_
 echo -en "\n \e[40;1;42m k8s folder generated for cluster ${K8S_KLUSTER}  \e[m\n"
 done
 
-git add "."
-HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
+if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+then
+  git add "."
+  HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
+fi
 
 for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
 do
@@ -241,6 +245,9 @@ done
 
 git push --follow-tags
 
-echo -en "\n Deployed repo: \e[40;1;42m $REPO_NAME \e[m\n"
+if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
+then
+  echo -en "\n Deployed repo: \e[40;1;42m $REPO_NAME \e[m\n"
+fi
 
 
