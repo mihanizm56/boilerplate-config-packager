@@ -248,8 +248,10 @@ done
 # for temploy
 # if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
 # then
-  git add "."
-  HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
+git add "."
+HUSKY_SKIP_HOOKS=1 git commit -m "'update tag $NEW_TAG'"
+
+git push --no-verify
 # fi
 
 for K8S_KLUSTER in ${KLUSTER_ARRAY[@]};
@@ -257,9 +259,14 @@ do
   NEW_TAG="${VERSION}-${K8S_KLUSTER}-${NEXT_INDEX}"
   git tag -m "'$NEW_TAG'" -a "$NEW_TAG"
   echo -en "\n Tag is created: \e[40;1;42m $NEW_TAG \e[m\n"
-done
+  git push --tags
 
-git push --follow-tags --no-verify
+  # this is because of cluster dependency
+  if [[ "$K8S_KLUSTER" != ${KLUSTER_ARRAY[${#KLUSTER_ARRAY[@]}-1]} && ${#KLUSTER_ARRAY[@]} != '1' ]];
+  then
+    sleep 200
+  fi
+done
 
 # for temploy
 # if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
