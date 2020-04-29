@@ -1,19 +1,12 @@
 image: node:12.13
 
-before_script:
-  - export SERVICE="suppliers-mutual-settlements-front"
-  - export IMAGE_NAME="$CI_REGISTRY_IMAGE/$SERVICE"
-
 variables:
   DOCKER_HOST: tcp://localhost:2375
-  DOCKER_TLS_CERTDIR: ''
-  ENDPOINT_REVISES: http://test/api/v1/revises
-  ENDPOINT_CONTRACTS: http://test/api/v1/contracts
+  DOCKER_TLS_CERTDIR: ""
 
 stages:
   - install_dependencies
   - tests_bundle
-  - integration-tests
   - release
 
 install_dependencies:
@@ -22,7 +15,7 @@ install_dependencies:
     - linux
   stage: install_dependencies
   script:
-    - npm ci
+    - npm install
   artifacts:
     paths:
       - node_modules/
@@ -33,7 +26,7 @@ lint:
     - linux
   stage: tests_bundle
   script:
-    - node ./cli/_utils/ci-utils/executor.js --command=lint-full
+    - set CI=true && npx eslint -c config/linters/.eslintrc.js src/ --ext .ts,.js,.tsx --fix && npx stylelint --fix --max-warnings=0 "src/**/*.{modules.scss,scss,css}" --config config/linters/.stylelintrc.js
 
 test:
   tags:
@@ -41,7 +34,7 @@ test:
     - linux
   stage: tests_bundle
   script:
-    - node ./cli/_utils/ci-utils/executor.js --command=test
+    - set CI=true && npx jest --config ./config/jest/jest.config.js
 
 build:
   tags:
@@ -49,19 +42,10 @@ build:
     - linux
   stage: tests_bundle
   script:
-    - node ./cli/_utils/ci-utils/executor.js --command=build
+    - set CI=true && npx cross-env NODE_ENV=production PUBLIC_URL=/ npx react-app-rewired build
   artifacts:
     paths:
       - build/
-
-integration-tests:
-  tags:
-    - golang
-    - linux
-  stage: integration-tests
-  image: circleci/node:12.13-browsers
-  script:
-    - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 release:
   tags:
