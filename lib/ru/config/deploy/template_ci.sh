@@ -249,7 +249,7 @@ done
 # if [ ! "$IS_WITHOUT_COMMIT" -o "$IS_WITHOUT_COMMIT" == 'undefined' ];
 # then
 git add "."
-HUSKY_SKIP_HOOKS=1 git commit -m "'update tag $NEW_TAG'"
+HUSKY_SKIP_HOOKS=1 git commit -m "update tag"
 
 git push --no-verify
 # fi
