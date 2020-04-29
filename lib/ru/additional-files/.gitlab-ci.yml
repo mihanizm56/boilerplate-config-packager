@@ -43,14 +43,6 @@ test:
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=test
 
-npm_ckeck_vulnerabilities:
-  tags:
-    - golang
-    - linux
-  stage: tests_bundle
-  script:
-    - node ./cli/_utils/ci-utils/executor.js --command=check-npm-packages
-
 build:
   tags:
     - golang
