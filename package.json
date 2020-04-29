@@ -10,6 +10,14 @@
     "size": "pkgfiles"
   },
   "license": "MIT",
+  "homepage": "https://github.com/mihanizm56/boilerplate-cli-packager#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihanizm56/boilerplate-cli-packager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mihanizm56/boilerplate-cli-packager/issues"
+  },
   "dependencies": {
     "@mihanizm56/node-file-copier": "0.0.3",
     "mkdirp-promise": "5.0.1",
