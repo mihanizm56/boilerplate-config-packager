@@ -91,7 +91,6 @@ spec:
       containers:
         - name: ${PROJECT_NAME}
           image: git.wildberries.ru:4567/${UNIT}/${REPO_NAME}/${REPO_NAME}:${VERSION}-dataline-${NEXT_INDEX}
-          env:
       imagePullSecrets:
         - name: gitlab-registry-secret
 ---
