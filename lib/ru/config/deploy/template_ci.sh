@@ -264,7 +264,7 @@ do
   # this is because of cluster dependency
   if [[ "$K8S_KLUSTER" != ${KLUSTER_ARRAY[${#KLUSTER_ARRAY[@]}-1]} && ${#KLUSTER_ARRAY[@]} != '1' ]];
   then
-    sleep 200
+    sleep 250
   fi
 done
 
