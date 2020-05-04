@@ -128,5 +128,21 @@
   },
   "eslintConfig": {
     "extends": ["react-app", "./config/linters/.eslintrc.js"]
+  },
+  "configOverridesPath": "config/webpack/config-overrides.js",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
+      "pre-commit": "node cli/_utils/ci-utils/executor.js --command=check-full",
+      "prepare-commit-msg": "node config/git/prepare-commit.js"
+    }
   }
 }

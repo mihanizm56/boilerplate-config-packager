@@ -15,6 +15,9 @@ module.exports.packageJsonPatch = async parameter => {
       resolutions,
       babel,
       eslintConfig,
+      configOverridesPath,
+      config,
+      husky,
     } = commandsFile;
 
     const packageJsonProjectFile = require(path.join(process.cwd())); // eslint-disable-line
@@ -33,13 +36,13 @@ module.exports.packageJsonPatch = async parameter => {
         ...packageJsonProjectFile.devDependencies,
         ...devDependencies,
       },
-      resolutions: {
-        ...packageJsonProjectFile.resolutions,
-        ...resolutions,
-      },
+      resolutions,
       browserslist,
       babel,
       eslintConfig,
+      'config-overrides-path': configOverridesPath,
+      config,
+      husky,
     };
 
     await writeFile(
