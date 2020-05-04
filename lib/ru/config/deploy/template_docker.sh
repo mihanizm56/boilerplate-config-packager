@@ -21,7 +21,6 @@ WORKDIR /app
 COPY package-lock.json /app/package-lock.json
 COPY package.json /app/package.json
 COPY tsconfig.json /app/tsconfig.json
-COPY .babelrc /app/.babelrc
 COPY utils /app/utils
 COPY config /app/config
 COPY public /app/public
