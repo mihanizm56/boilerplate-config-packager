@@ -20,7 +20,11 @@ module.exports.packageJsonPatch = async parameter => {
       husky,
     } = commandsFile;
 
-    const packageJsonProjectFile = require(path.join(process.cwd())); // eslint-disable-line
+    // eslint-disable-next-line
+    const packageJsonProjectFile = require(path.join(
+      process.cwd(),
+      'package.json',
+    ));
 
     const newPackage = {
       ...packageJsonProjectFile,
