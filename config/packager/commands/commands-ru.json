@@ -125,5 +125,8 @@
   },
   "babel": {
     "extends": "./config/babel/babel.config.json"
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "./config/linters/.eslintrc.js"]
   }
 }

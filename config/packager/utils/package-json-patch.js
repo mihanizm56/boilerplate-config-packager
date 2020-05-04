@@ -14,6 +14,7 @@ module.exports.packageJsonPatch = async parameter => {
       browserslist,
       resolutions,
       babel,
+      eslintConfig,
     } = commandsFile;
 
     const packageJsonProjectFile = require(path.join(process.cwd())); // eslint-disable-line
@@ -38,6 +39,7 @@ module.exports.packageJsonPatch = async parameter => {
       },
       browserslist,
       babel,
+      eslintConfig,
     };
 
     await writeFile(

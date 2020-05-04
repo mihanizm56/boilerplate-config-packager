@@ -101,5 +101,8 @@
       "last 1 safari version"
     ]
   },
-  "babel": {}
+  "babel": {},
+  "eslintConfig": {
+    "extends": ["react-app", "./config/linters/.eslintrc.js"]
+  }
 }
