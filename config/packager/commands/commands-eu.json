@@ -105,7 +105,7 @@
   "eslintConfig": {
     "extends": ["react-app", "./config/linters/.eslintrc.js"]
   },
-  "config-overrides-path": "config/webpack/config-overrides.js",
+  "configOverridesPath": "config/webpack/config-overrides.js",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"

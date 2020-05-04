@@ -40,9 +40,9 @@ module.exports.packageJsonPatch = async parameter => {
       browserslist,
       babel,
       eslintConfig,
-      'config-overrides-path': configOverridesPath,
       config,
       husky,
+      'config-overrides-path': configOverridesPath,
     };
 
     await writeFile(
@@ -52,5 +52,6 @@ module.exports.packageJsonPatch = async parameter => {
     );
   } catch (error) {
     console.log('get an error when getting package', error);
+    process.exit(1);
   }
 };

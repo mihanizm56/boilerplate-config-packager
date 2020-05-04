@@ -37,7 +37,9 @@ const runPackage = async () => {
   try {
     console.log('(config-packager): start to execute');
 
-    await exec('npm install @wildberries/boilerplate-config-packager');
+    await exec(
+      'npm install @wildberries/boilerplate-config-packager@0.0.68-beta.0',
+    );
 
     console.log('(config-packager): start to copy');
 
@@ -49,9 +51,12 @@ const runPackage = async () => {
 
     console.log('(config-packager): package.json patched successfuly');
 
-    await exec('npm uninstall @wildberries/boilerplate-config-packager');
+    await exec(
+      'npm uninstall @wildberries/boilerplate-config-packager@0.0.68-beta.0',
+    );
   } catch (error) {
     console.log('error when executing the package', error);
+    process.exit(1);
   }
 };
 
