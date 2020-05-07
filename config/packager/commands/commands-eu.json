@@ -8,7 +8,7 @@
     "@wildberries/notifications": "0.0.8",
     "@wildberries/redux-core-modules": "0.0.10",
     "@wildberries/service-router": "0.0.9",
-    "@wildberries/ui-kit": "0.0.1-beta.18",
+    "@wildberries/ui-kit": "0.0.1-beta.21",
     "@wildberries/validators": "0.0.3",
     "@wildberries/webpack-config-stream": "0.0.1",
     "babel-polyfill": "6.26.0",

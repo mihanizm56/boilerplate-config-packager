@@ -8,7 +8,7 @@
     "@mihanizm56/fetch-api": "3.2.1",
     "@wildberries/notifications": "0.0.8",
     "@wildberries/redux-core-modules": "0.0.10",
-    "@wildberries/ui-kit": "0.0.1-beta.18",
+    "@wildberries/ui-kit": "0.0.1-beta.21",
     "@wildberries/validators": "0.0.3",
     "@wildberries/service-router": "0.0.9",
     "@types/react": "16.9.11",
