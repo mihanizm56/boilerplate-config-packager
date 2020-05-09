@@ -10,7 +10,7 @@
     "@wildberries/service-router": "0.0.9",
     "@wildberries/ui-kit": "0.0.1-beta.21",
     "@wildberries/validators": "0.0.3",
-    "@wildberries/webpack-config-stream": "0.0.1",
+    "@wildberries/webpack-config-stream": "0.0.3",
     "babel-polyfill": "6.26.0",
     "classnames": "2.2.6",
     "cross-env": "6.0.3",
@@ -36,7 +36,8 @@
     "reset-css": "5.0.1",
     "typescript": "3.6.4",
     "webpack": "4.42.0",
-    "webpack-cli": "3.3.11"
+    "webpack-cli": "3.3.11",
+    "webpack-merge": "4.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "8.2.0",
