@@ -10,6 +10,7 @@
     "@wildberries/ui-kit": "0.0.1-beta.21",
     "@wildberries/validators": "0.0.3",
     "@wildberries/service-router": "0.0.9",
+    "@wildberries/i18next-utils": "0.0.1",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "babel-polyfill": "6.26.0",

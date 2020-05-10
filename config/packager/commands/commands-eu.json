@@ -10,6 +10,7 @@
     "@wildberries/validators": "0.0.3",
     "@wildberries/webpack-config-stream": "0.0.3",
     "@wildberries/service-suppliers": "0.0.2-beta.1",
+    "@wildberries/i18next-utils": "0.0.1",
     "babel-polyfill": "6.26.0",
     "js-file-download": "0.4.11",
     "classnames": "2.2.6",
