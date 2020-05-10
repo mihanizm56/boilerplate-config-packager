@@ -15,7 +15,43 @@ module.exports.packageJsonPatch = async parameter => {
 
     const newPackage = {
       ...packageJsonProjectFile,
-      ...commandsFile,
+      scripts: {
+        ...packageJsonProjectFile.scripts,
+        ...commandsFile.scripts,
+      },
+      dependencies: {
+        ...packageJsonProjectFile.dependencies,
+        ...commandsFile.dependencies,
+      },
+      devDependencies: {
+        ...packageJsonProjectFile.devDependencies,
+        ...commandsFile.devDependencies,
+      },
+      resolutions: {
+        ...packageJsonProjectFile.resolutions,
+        ...commandsFile.resolutions,
+      },
+      browserslist: {
+        ...packageJsonProjectFile.browserslist,
+        ...commandsFile.browserslist,
+      },
+      babel: {
+        ...packageJsonProjectFile.babel,
+        ...commandsFile.babel,
+      },
+      eslintConfig: {
+        ...packageJsonProjectFile.eslintConfig,
+        ...commandsFile.eslintConfig,
+      },
+      config: {
+        ...packageJsonProjectFile.config,
+        ...commandsFile.config,
+      },
+      husky: {
+        ...packageJsonProjectFile.husky,
+        ...commandsFile.husky,
+      },
+      'config-overrides-path': commandsFile.configOverridesPath,
     };
 
     await writeFile(
