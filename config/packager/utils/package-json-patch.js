@@ -51,7 +51,7 @@ module.exports.packageJsonPatch = async parameter => {
         ...packageJsonProjectFile.husky,
         ...commandsFile.husky,
       },
-      'config-overrides-path': commandsFile.configOverridesPath,
+      'config-overrides-path': commandsFile['config-overrides-path'],
     };
 
     await writeFile(
