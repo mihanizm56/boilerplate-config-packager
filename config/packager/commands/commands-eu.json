@@ -1,6 +1,4 @@
 {
-  "scripts": {},
-  "resolutions": {},
   "dependencies": {
     "@babel/runtime": "7.7.6",
     "@hapi/joi": "17.1.1",
@@ -96,11 +94,10 @@
       "last 1 safari version"
     ]
   },
-  "babel": {},
   "eslintConfig": {
     "extends": ["react-app", "./config/linters/.eslintrc.js"]
   },
-  "configOverridesPath": "config/webpack/config-overrides.js",
+  "config-overrides-path": "config/webpack/config-overrides.js",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"

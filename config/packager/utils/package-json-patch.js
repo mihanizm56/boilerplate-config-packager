@@ -7,19 +7,6 @@ module.exports.packageJsonPatch = async parameter => {
   try {
     const commandsFile = parameter === 'eu' ? commandsFileEU : commandsFileRU;
 
-    const {
-      scripts,
-      devDependencies,
-      dependencies,
-      browserslist,
-      resolutions,
-      babel,
-      eslintConfig,
-      configOverridesPath,
-      config,
-      husky,
-    } = commandsFile;
-
     // eslint-disable-next-line
     const packageJsonProjectFile = require(path.join(
       process.cwd(),
@@ -28,25 +15,7 @@ module.exports.packageJsonPatch = async parameter => {
 
     const newPackage = {
       ...packageJsonProjectFile,
-      scripts: {
-        ...packageJsonProjectFile.scripts,
-        ...scripts,
-      },
-      dependencies: {
-        ...packageJsonProjectFile.dependencies,
-        ...dependencies,
-      },
-      devDependencies: {
-        ...packageJsonProjectFile.devDependencies,
-        ...devDependencies,
-      },
-      resolutions,
-      browserslist,
-      babel,
-      eslintConfig,
-      config,
-      husky,
-      'config-overrides-path': configOverridesPath,
+      ...commandsFile,
     };
 
     await writeFile(
