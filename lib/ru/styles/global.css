@@ -1,4 +1,5 @@
 @import-normalize;
+@import './external-normalize/normalize.css';
 
 html,
 body,
