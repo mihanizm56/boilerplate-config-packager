@@ -1,0 +1,24 @@
+@import-normalize;
+
+html,
+body,
+#root {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+body {
+  position: relative;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --overlay-animation-duration: "500ms";
+  --overlay-opacity: 1;
+}

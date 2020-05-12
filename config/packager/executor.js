@@ -19,7 +19,7 @@ const packageRootDir = path.join(
 );
 
 const configsDir = path.join(packageRootDir, configParameter, 'config');
-
+const stylesFilesDir = path.join(packageRootDir, configParameter, 'styles');
 const additionalFilesDir = path.join(
   packageRootDir,
   configParameter,
@@ -29,6 +29,7 @@ const additionalFilesDir = path.join(
 const arrayToCopy = [
   { from: configsDir, to: path.join(process.cwd(), 'config') },
   { from: additionalFilesDir, to: process.cwd() },
+  { from: stylesFilesDir, to: path.join(process.cwd(), 'src', 'styles') },
 ];
 
 const copier = new Copier({ arrayToCopy });
