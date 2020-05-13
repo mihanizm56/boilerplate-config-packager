@@ -566,3 +566,7 @@ input[type="radio"].visually-hidden {
   font-family: "lato", Helvetica, sans-serif;
   padding: 0;
 }
+
+.wbpa-body__container {
+  display: flex !important;
+}
