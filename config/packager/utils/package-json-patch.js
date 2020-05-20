@@ -43,6 +43,10 @@ module.exports.packageJsonPatch = async parameter => {
         ...packageJsonProjectFile.eslintConfig,
         ...commandsFile.eslintConfig,
       },
+      stylelint: {
+        ...packageJsonProjectFile.stylelint,
+        ...commandsFile.stylelint,
+      },
       config: {
         ...packageJsonProjectFile.config,
         ...commandsFile.config,

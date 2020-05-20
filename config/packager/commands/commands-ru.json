@@ -121,6 +121,9 @@
   "eslintConfig": {
     "extends": ["react-app", "./config/linters/.eslintrc.js"]
   },
+  "stylelint": {
+    "extends": "./config/linters/.stylelintrc.js"
+  },
   "config-overrides-path": "config/webpack/config-overrides.js",
   "config": {
     "commitizen": {
