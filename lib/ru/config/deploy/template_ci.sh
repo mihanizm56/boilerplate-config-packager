@@ -263,7 +263,7 @@ do
   # this is because of cluster dependency
   if [[ "$K8S_KLUSTER" != ${KLUSTER_ARRAY[${#KLUSTER_ARRAY[@]}-1]} && ${#KLUSTER_ARRAY[@]} != '1' ]];
   then
-    sleep 300
+    echo -en "\n\033[40;1;41m PLEASE BE CAREFUL IF USE MULTIPLE CLUSTERS - THEY MAY HAVE DEPENDENCIES \033[0m\n"
   fi
 done
 
