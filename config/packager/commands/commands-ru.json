@@ -45,6 +45,7 @@
     "reset-css": "5.0.1",
     "router5": "7.0.2",
     "router5-helpers": "7.0.1",
+    "fast-text-encoding": "1.0.2",
     "router5-plugin-browser": "7.0.2",
     "router5-plugin-logger": "7.0.2",
     "typescript": "3.6.4"
