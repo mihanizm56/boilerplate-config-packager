@@ -1,11 +1,13 @@
 #!/bin/bash
 
 cat << _EOF_ > ./config/deploy/Dockerfile
-FROM node:12.13.0-alpine as builder
+FROM node:12.13-alpine as builder
 
-RUN mkdir -p /app
+RUN apk add --update bash
 
 WORKDIR /app
+
+ENV REACT_APP_ROUTER_PREFIX /
 
 COPY package-lock.json /app/package-lock.json
 COPY package.json /app/package.json
@@ -15,23 +17,29 @@ COPY config /app/config
 COPY cli /app/cli
 COPY src /app/src
 
-RUN npm install --only=prod
+# todo make it outside
+COPY certs /app/certs
 
-RUN node /app/cli/_utils/ci-utils/executor.js --command=build
+RUN npm install --only=prod
+RUN node ./cli/_utils/ci-utils/executor.js --command=build
+
+# prepare nginx config with pushed files
+RUN chmod +x /app/config/deploy/nginx-maker.sh
+RUN ["bash","/app/config/deploy/nginx-maker.sh", "/usr/share/metadata/core/build", "config/nginx/nginx.conf", "build"]
 
 FROM nginx
 
-# support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
-# users are not allowed to listen on priviliged ports
-ADD config/nginx/nginx-server.conf /etc/nginx/conf.d/nginx-server.conf
-RUN rm -rf /etc/nginx/conf.d/default.conf; sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
-
-EXPOSE 80
-
-COPY --from=builder /app/build /usr/share/metadata/core
-
 WORKDIR /usr/share/metadata/core
+
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
+RUN rm -rf /etc/nginx/conf.d/default.conf
+RUN rm -rf /etc/nginx/nginx.conf
+
+COPY --from=builder /app/certs /certs
+COPY --from=builder /app/build /usr/share/metadata/core/build
+COPY --from=builder /app/config/nginx/nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 443
 _EOF_
 
 
