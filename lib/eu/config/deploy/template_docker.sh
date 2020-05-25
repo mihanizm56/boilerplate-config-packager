@@ -22,8 +22,8 @@ COPY ./certs /app/certs
 
 RUN npx npm-force-resolutions
 RUN npm install --only-prod
-RUN node ./config/ink/_utils/ci-utils/executor.js --command=build
-RUN node ./config/ink/_utils/ci-utils/executor.js --command=compress-build
+RUN node cli/_utils/ci-utils/executor.js --command=build
+RUN node cli/_utils/ci-utils/executor.js --command=compress-build
 
 # prepare nginx config with pushed files
 RUN chmod +x /app/config/deploy/nginx-maker.sh

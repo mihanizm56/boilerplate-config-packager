@@ -28,10 +28,8 @@ COPY cli /app/cli
 COPY src /app/src
 
 RUN npx npm-force-resolutions
-
 RUN npm install --only=prod
-
-RUN set CI=true && npx react-app-rewired build
+RUN node cli/_utils/ci-utils/executor.js --command=build
 
 EXPOSE 80
 
