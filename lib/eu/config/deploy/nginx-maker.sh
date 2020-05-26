@@ -88,13 +88,20 @@ http {
 
 		resolver 10.15.12.100 10.15.12.200;
 
+		location ~ \.(js|map|jpg|json|svg|ico|png|css|woff|woff2|ttf)$ {
+			root ${PATH_TO_DIR};
+		}
+
 		location / {
-        add_header 'Access-Control-Allow-Origin' '*';
-        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS';
+			access_log off;
+			expires 1d;
+			add_header Cache-Control "no-cache, no-store, must-revalidate, max-age=0";
+			add_header Pragma "no-cache";
+			add_header Expires "0";
 
 ${FULL_PUSH_LIST}
-			
-			try_files \$uri /config.json;
+
+			try_files \$uri /index.html;
 		}
 	}
 }
