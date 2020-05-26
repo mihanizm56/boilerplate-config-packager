@@ -2,7 +2,7 @@
   "dependencies": {
     "@babel/runtime": "7.7.6",
     "@hapi/joi": "17.1.1",
-    "@mihanizm56/fetch-api": "3.3.3",
+    "@mihanizm56/fetch-api": "3.3.4",
     "@wildberries/notifications": "0.0.8",
     "@wildberries/redux-core-modules": "0.0.15",
     "@wildberries/service-router": "0.0.9",
@@ -99,7 +99,10 @@
     ]
   },
   "eslintConfig": {
-    "extends": ["react-app", "./config/linters/.eslintrc.js"]
+    "extends": [
+      "react-app",
+      "./config/linters/.eslintrc.js"
+    ]
   },
   "stylelint": {
     "extends": "./config/linters/.stylelintrc.js"

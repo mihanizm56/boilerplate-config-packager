@@ -4,7 +4,7 @@
     "@hapi/joi": "17.1.1",
     "@material-ui/core": "4.9.2",
     "@material-ui/icons": "4.9.1",
-    "@mihanizm56/fetch-api": "3.3.3",
+    "@mihanizm56/fetch-api": "3.3.4",
     "@wildberries/notifications": "0.0.8",
     "@wildberries/redux-core-modules": "0.0.15",
     "@wildberries/ui-kit": "0.0.1-beta.21",
@@ -122,7 +122,10 @@
     "extends": "./config/babel/babel.config.json"
   },
   "eslintConfig": {
-    "extends": ["react-app", "./config/linters/.eslintrc.js"]
+    "extends": [
+      "react-app",
+      "./config/linters/.eslintrc.js"
+    ]
   },
   "stylelint": {
     "extends": "./config/linters/.stylelintrc.js"
