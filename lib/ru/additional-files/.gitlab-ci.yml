@@ -15,7 +15,7 @@ install_dependencies:
     - linux
   stage: install_dependencies
   script:
-    - npm install
+    - npm ci
   artifacts:
     paths:
       - node_modules/
