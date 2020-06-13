@@ -5,10 +5,11 @@ const Copier = require('@mihanizm56/node-file-copier');
 const { exec } = require('./utils/fs-promises');
 const { getConsoleArgs } = require('./utils/get-args');
 const { packageJsonPatch } = require('./utils/package-json-patch');
+const { getConfigFolderPrefix } = require('./utils/get-config-folder-prefix');
 
 const flags = getConsoleArgs(process.argv);
 
-const configParameter = flags.euro ? 'eu' : 'ru';
+const configFolderPrefix = getConfigFolderPrefix(flags);
 
 const packageRootDir = path.join(
   process.cwd(),
@@ -18,11 +19,11 @@ const packageRootDir = path.join(
   'lib',
 );
 
-const configsDir = path.join(packageRootDir, configParameter, 'config');
-const stylesFilesDir = path.join(packageRootDir, configParameter, 'styles');
+const configsDir = path.join(packageRootDir, configFolderPrefix, 'config');
+const stylesFilesDir = path.join(packageRootDir, configFolderPrefix, 'styles');
 const additionalFilesDir = path.join(
   packageRootDir,
-  configParameter,
+  configFolderPrefix,
   'additional-files',
 );
 
@@ -46,7 +47,7 @@ const runPackage = async () => {
 
     console.log('(config-packager): start to patch package.json');
 
-    await packageJsonPatch(configParameter);
+    await packageJsonPatch(configFolderPrefix);
 
     console.log('(config-packager): package.json patched successfuly');
 

@@ -1,0 +1,145 @@
+{
+  "dependencies": {
+    "@hapi/joi": "17.1.1",
+    "@material-ui/core": "4.10.1",
+    "@material-ui/icons": "4.9.1",
+    "@mihanizm56/fetch-api": "3.3.6",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@wildberries/i18next-utils": "0.0.4",
+    "@wildberries/redux-core-modules": "0.0.16",
+    "@wildberries/service-router": "0.0.9",
+    "@wildberries/validators": "0.1.0",
+    "browserslist": "4.12.0",
+    "caniuse-lite": "1.0.30001066",
+    "classnames": "2.2.6",
+    "core-js": "3.6.5",
+    "cross-env": "6.0.3",
+    "fast-text-encoding": "1.0.2",
+    "final-form": "4.18.6",
+    "i18next": "19.4.4",
+    "lodash-es": "4.17.15",
+    "mini-css-extract-plugin": "0.8.0",
+    "node-sass": "4.13.1",
+    "react": "16.12.0",
+    "react-app-rewired": "2.1.5",
+    "react-dev-utils": "10.2.0",
+    "react-dom": "16.12.0",
+    "react-final-form": "6.3.3",
+    "react-final-form-listeners": "1.0.2",
+    "react-redux": "7.1.3",
+    "react-router5": "7.1.0",
+    "react-scripts": "3.4.1",
+    "react-text-mask": "5.4.3",
+    "react-transition-group": "4.3.0",
+    "customize-cra": "0.9.1",
+    "customize-cra-react-refresh": "1.0.1",
+    "redux": "4.0.4",
+    "redux-batched-actions": "0.4.1",
+    "redux-devtools-extension": "2.13.8",
+    "redux-saga": "1.1.1",
+    "reselect": "4.0.0",
+    "reset-css": "5.0.1",
+    "router5": "7.0.2",
+    "router5-helpers": "7.0.1",
+    "router5-plugin-browser": "7.0.2",
+    "router5-plugin-logger": "7.0.2",
+    "typescript": "3.6.4",
+    "whatwg-fetch": "3.0.0",
+    "abortcontroller-polyfill": "1.4.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.2.0",
+    "@ffmpeg-installer/ffmpeg": "1.0.20",
+    "@types/enzyme": "3.10.4",
+    "@types/jest": "24.9.1",
+    "@types/node": "12.11.7",
+    "@typescript-eslint/eslint-plugin": "2.28.0",
+    "@types/react-text-mask": "5.4.6",
+    "@typescript-eslint/parser": "2.5.0",
+    "body-parser": "1.19.0",
+    "commitizen": "4.0.4",
+    "compress": "0.99.0",
+    "concurrently": "5.2.0",
+    "cors": "2.8.5",
+    "cz-customizable": "6.2.0",
+    "dotenv": "8.2.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "enzyme-to-json": "3.4.3",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-import-resolver-typescript": "2.0.0",
+    "eslint-plugin-css-modules": "2.11.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "2.2.0",
+    "eslint-plugin-security": "1.4.0",
+    "eslint-plugin-testcafe": "0.2.1",
+    "eslint-plugin-unused-imports": "0.1.3",
+    "express": "4.17.1",
+    "http-errors": "1.7.3",
+    "husky": "3.0.9",
+    "import-jsx": "3.1.0",
+    "ink": "2.7.0",
+    "ink-big-text": "1.0.1",
+    "ink-divider": "2.0.1",
+    "ink-gradient": "1.0.0",
+    "ink-select-input": "3.1.2",
+    "ink-spinner": "3.0.1",
+    "ink-text-input": "3.2.2",
+    "jest": "24.9.0",
+    "morgan": "1.9.1",
+    "node-fetch": "2.6.0",
+    "nodemon": "2.0.1",
+    "npm-audit-resolver": "2.1.0",
+    "prettier": "1.18.2",
+    "source-map-explorer": "2.1.2",
+    "stylelint": "13.3.3",
+    "stylelint-config-recommended-scss": "4.0.0",
+    "stylelint-config-standard": "19.0.0",
+    "stylelint-order": "3.1.1",
+    "stylelint-scss": "3.12.0",
+    "testcafe": "1.8.5",
+    "ts-jest": "25.0.0"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "./config/linters/.eslintrc.js"
+    ]
+  },
+  "stylelint": {
+    "extends": "./config/linters/.stylelintrc.js"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "0.8.0"
+  },
+  "config-overrides-path": "config/webpack/config-overrides.js",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
+      "pre-commit": "node ./cli/_utils/ci-utils/executor.js --command=check-full",
+      "prepare-commit-msg": "node config/git/prepare-commit.js"
+    }
+  }
+}

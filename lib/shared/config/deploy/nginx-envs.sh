@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PATH_TO_NGINX=$1
+KLUSTER=$(printenv CLUSTER)
+NAMESPACE=$(printenv NAMESPACE_PASSPORT)
+
+sed -i -- "s/{{KLUSTER}}/$KLUSTER/g" $PATH_TO_NGINX
+sed -i -- "s/{{NAMESPACE_PASSPORT}}/$NAMESPACE/g" $PATH_TO_NGINX
