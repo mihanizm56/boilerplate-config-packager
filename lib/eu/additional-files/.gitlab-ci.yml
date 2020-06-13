@@ -11,8 +11,7 @@ stages:
 
 install_dependencies:
   tags:
-    - golang
-    - linux
+    - baremetal-linux
   stage: install_dependencies
   script:
     - npm install
@@ -22,24 +21,21 @@ install_dependencies:
 
 lint:
   tags:
-    - golang
-    - linux
+    - baremetal-linux
   stage: tests_bundle
   script:
     - set CI=true && npx eslint -c config/linters/.eslintrc.js src/ --ext .ts,.js,.tsx --fix && npx stylelint --fix --max-warnings=0 "src/**/*.{modules.scss,scss,css}" --config config/linters/.stylelintrc.js
 
 test:
   tags:
-    - golang
-    - linux
+    - baremetal-linux
   stage: tests_bundle
   script:
     - set CI=true && npx jest --config ./config/jest/jest.config.js
 
 build:
   tags:
-    - golang
-    - linux
+    - baremetal-linux
   stage: tests_bundle
   script:
     - set CI=true && npx webpack --display errors-only --config ./config/webpack/webpack.config.js
@@ -49,8 +45,7 @@ build:
 
 release:
   tags:
-    - golang
-    - linux
+    - baremetal-linux
   stage: release
   image: git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:latest
   services:
