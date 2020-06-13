@@ -4,7 +4,6 @@ UNIT=portals
 REPO_NAME=$1
 DEPLOY_TOKEN=$2
 NAMESPACE=$3
-NAMESPACE_PASSPORT=$NAMESPACE
 PROJECT_NAME='front'
 KLUSTER_ARRAY=($4 $5 $6 $7)
 VERSION=v0.0.5
@@ -171,8 +170,6 @@ spec:
           env:
             - name: CLUSTER
               value: ${K8S_KLUSTER}
-            - name: NAMESPACE_PASSPORT
-              value: ${NAMESPACE_PASSPORT}
 _EOF_
 fi
 
@@ -203,8 +200,6 @@ spec:
           env:
             - name: CLUSTER
               value: ${K8S_KLUSTER}
-            - name: NAMESPACE_PASSPORT
-              value: ${NAMESPACE_PASSPORT}
 _EOF_
 fi
 

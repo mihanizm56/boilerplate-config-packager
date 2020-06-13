@@ -104,13 +104,6 @@ ${FULL_PUSH_LIST}
 			try_files \$uri /index.html;
 		}
 
-		location /manager/api/v1/ {
-			set \$target http://manager-nginx.{{NAMESPACE_PASSPORT}}.svc.k8s.{{KLUSTER}};
-			proxy_pass \$target;
-
-			proxy_redirect     off;
-		}
-
 		location /i18n/ {
 			set \$target http://i18n.suppliers-portal-eu.svc.k8s.test;
 			proxy_pass \$target;

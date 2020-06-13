@@ -15,8 +15,6 @@ COPY config /app/config
 COPY _utils /app/_utils
 COPY src /app/src
 
-# COPY build /app/build
-
 RUN npx npm-force-resolutions
 RUN npm install --only-prod
 RUN node ./cli/_utils/ci-utils/executor.js --command=build
@@ -33,7 +31,6 @@ RUN apk add --update bash
 # !!!!! FOR LOCAL TEST ONLY
 # COPY config/test-certs /certs
 # ENV CLUSTER test
-# ENV NAMESPACE_PASSPORT wb-passport
 
 WORKDIR /usr/share/metadata/core
 

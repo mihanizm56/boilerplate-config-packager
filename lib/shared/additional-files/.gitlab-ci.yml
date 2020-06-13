@@ -1,7 +1,7 @@
 image: node:12.13
 
 before_script:
-  - export SERVICE="wb-passport-front"
+  - export SERVICE="<type your project name>"
   - export IMAGE_NAME="$CI_REGISTRY_IMAGE/$SERVICE"
 
 variables:
