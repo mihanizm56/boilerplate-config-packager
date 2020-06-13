@@ -5,8 +5,6 @@ RUN apk add --update bash
 
 WORKDIR /app
 
-ENV REACT_APP_ROUTER_PREFIX /
-
 COPY package-lock.json /app/package-lock.json
 COPY package.json /app/package.json
 COPY public /app/public
