@@ -166,6 +166,8 @@ spec:
               memory: "128Mi"
               cpu: "0.1"
           env:
+            - name: CLUSTER
+              value: ${K8S_KLUSTER}
             - name: ENDPOINT_MISMATCH
               value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
 _EOF_
@@ -196,6 +198,8 @@ spec:
               memory: "1Gi"
               cpu: "1"
           env:
+            - name: CLUSTER
+              value: ${K8S_KLUSTER}
             - name: ENDPOINT_MISMATCH
               value: "http://fault-service.supply-to-warehouse.svc.k8s.${K8S_KLUSTER}/api/v1/fault"
 _EOF_

@@ -103,6 +103,13 @@ ${FULL_PUSH_LIST}
 
 			try_files \$uri /index.html;
 		}
+
+		location /i18n/ {
+			set \$target http://i18n.suppliers-portal-eu.svc.k8s.test;
+			proxy_pass \$target;
+
+			proxy_redirect     off;
+		}
 	}
 }
 _EOF_

@@ -7,6 +7,7 @@ variables:
 stages:
   - install_dependencies
   - tests_bundle
+  - integration_tests
   - release
 
 install_dependencies:
@@ -42,6 +43,15 @@ build:
   artifacts:
     paths:
       - build/
+
+
+integration-tests:
+  tags:
+    - baremetal-linux
+  stage: integration_tests
+  image: circleci/node:12.13-browsers
+  script:
+    - sudo node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 release:
   tags:

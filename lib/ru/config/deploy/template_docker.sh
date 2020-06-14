@@ -37,4 +37,4 @@ CMD node config/deploy/make-runtime-config.js && node config/production-server/s
 _EOF_
 
 
-echo -en "\n \e[40;1;42m Dcokerfile is created \e[m\n"
+echo -en "\n \e[40;1;42m Dockerfile is created \e[m\n"
