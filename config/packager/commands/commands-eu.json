@@ -95,10 +95,19 @@
     "ts-jest": "25.0.0"
   },
   "browserslist": {
+    "production": [
+      "last 30 chrome version",
+      "last 30 firefox version",
+      "last 30 safari version",
+      "last 30 opera version",
+      "last 50 edge version"
+    ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version",
+      "last 3 opera version",
+      "last 1 edge version"
     ]
   },
   "eslintConfig": {
