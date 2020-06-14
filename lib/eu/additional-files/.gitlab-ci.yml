@@ -25,14 +25,14 @@ lint:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - set CI=true && npx eslint -c config/linters/.eslintrc.js src/ --ext .ts,.js,.tsx --fix && npx stylelint --fix --max-warnings=0 "src/**/*.{modules.scss,scss,css}" --config config/linters/.stylelintrc.js
+    - node ./cli/_utils/ci-utils/executor.js --command=lint-full
 
 test:
   tags:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - set CI=true && npx jest --config ./config/jest/jest.config.js
+    - node ./cli/_utils/ci-utils/executor.js --command=test
 
 build:
   tags:
