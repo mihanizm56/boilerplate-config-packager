@@ -11,6 +11,7 @@ COPY public /app/public
 COPY tsconfig.json /app/tsconfig.json
 COPY config /app/config
 COPY utils /app/utils
+COPY cli /app/cli
 COPY src /app/src
 
 RUN npx npm-force-resolutions
