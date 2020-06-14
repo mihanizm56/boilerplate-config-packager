@@ -10,7 +10,7 @@ COPY package.json /app/package.json
 COPY public /app/public
 COPY tsconfig.json /app/tsconfig.json
 COPY config /app/config
-COPY _utils /app/_utils
+COPY utils /app/utils
 COPY src /app/src
 
 RUN npx npm-force-resolutions
