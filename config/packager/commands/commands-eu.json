@@ -5,7 +5,7 @@
     "@mihanizm56/fetch-api": "3.3.9",
     "@wildberries/notifications": "0.0.9",
     "@wildberries/redux-core-modules": "0.0.17",
-    "@wildberries/service-router": "0.0.11",
+    "@wildberries/service-router": "0.0.13",
     "@wildberries/ui-kit": "0.0.1-beta.27",
     "@wildberries/validators": "0.1.0",
     "@wildberries/webpack-config-stream": "0.0.5",
