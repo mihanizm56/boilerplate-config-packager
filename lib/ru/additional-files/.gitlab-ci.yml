@@ -25,21 +25,21 @@ lint:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - node ./config/cli/_utils/ci-utils/executor.js --command=lint-full
+    - node ./cli/_utils/ci-utils/executor.js --command=lint-full
 
 test:
   tags:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - node ./config/cli/_utils/ci-utils/executor.js --command=test
+    - node ./cli/_utils/ci-utils/executor.js --command=test
 
 build:
   tags:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - node ./config/cli/_utils/ci-utils/executor.js --command=build
+    - node ./cli/_utils/ci-utils/executor.js --command=build
   artifacts:
     paths:
       - build/
@@ -50,7 +50,7 @@ integration-tests:
   stage: integration_tests
   image: circleci/node:12.13-browsers
   script:
-    - node ./config/cli/_utils/ci-utils/executor.js --command=integration-tests
+    - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 release:
   tags:
