@@ -8,7 +8,7 @@
     "@wildberries/redux-core-modules": "0.0.20",
     "@wildberries/service-router": "0.0.16",
     "@wildberries/validators": "0.1.0",
-    "@wildberries/ui-kit": "0.0.1-beta.27",
+    "@wildberries/ui-kit": "0.0.1-beta.35",
     "@wildberries/notifications": "0.0.9",
     "classnames": "2.2.6",
     "cross-env": "6.0.3",

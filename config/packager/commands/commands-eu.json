@@ -6,7 +6,7 @@
     "@babel/runtime": "7.7.6",
     "@hapi/joi": "17.1.1",
     "@wildberries/notifications": "0.0.9",
-    "@wildberries/ui-kit": "0.0.1-beta.27",
+    "@wildberries/ui-kit": "0.0.1-beta.35",
     "@wildberries/validators": "0.1.0",
     "@wildberries/webpack-config-stream": "0.0.5",
     "@wildberries/service-suppliers": "0.0.2-beta.9",
