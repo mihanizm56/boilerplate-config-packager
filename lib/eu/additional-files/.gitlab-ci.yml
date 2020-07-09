@@ -7,7 +7,7 @@ variables:
 stages:
   - install_dependencies
   - tests_bundle
-  - integration_tests
+  - pre_release
   - release
 
 install_dependencies:
@@ -39,19 +39,30 @@ build:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - set CI=true && npx webpack --display errors-only --config ./config/webpack/webpack.config.js
+    - set CI=true && npx react-app-rewired build
   artifacts:
     paths:
       - build/
 
-
 integration-tests:
   tags:
     - baremetal-linux
-  stage: integration_tests
+  stage: pre_release
   image: circleci/node:12.13-browsers
   script:
     - sudo node ./cli/_utils/ci-utils/executor.js --command=integration-tests
+
+build_release:
+  tags:
+    - baremetal-linux
+  stage: pre_release
+  script:
+    - >-
+      set CI=true && npx webpack --display errors-only --config
+      ./config/webpack/webpack.config.js
+  artifacts:
+    paths:
+      - build/
 
 release:
   tags:
