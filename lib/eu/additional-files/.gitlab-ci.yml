@@ -39,7 +39,7 @@ build:
     - baremetal-linux
   stage: tests_bundle
   script:
-    - set CI=true && npx react-app-rewired build
+    - node ./cli/_utils/ci-utils/executor.js --command=cra-build
   artifacts:
     paths:
       - build/
@@ -50,16 +50,14 @@ integration-tests:
   stage: pre_release
   image: circleci/node:12.13-browsers
   script:
-    - sudo node ./cli/_utils/ci-utils/executor.js --command=integration-tests
+    - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 build_release:
   tags:
     - baremetal-linux
   stage: pre_release
   script:
-    - >-
-      set CI=true && npx webpack --display errors-only --config
-      ./config/webpack/webpack.config.js
+    - node ./cli/_utils/ci-utils/executor.js --command=module-build
   artifacts:
     paths:
       - build/
