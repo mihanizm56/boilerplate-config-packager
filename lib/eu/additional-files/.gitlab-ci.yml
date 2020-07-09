@@ -12,59 +12,71 @@ stages:
 
 install_dependencies:
   tags:
-    - baremetal-linux
+    - linux
   stage: install_dependencies
   script:
     - npm install
   artifacts:
     paths:
       - node_modules/
+  retry:
+    max: 2
 
 lint:
   tags:
-    - baremetal-linux
+    - linux
   stage: tests_bundle
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=lint-full
+  retry:
+    max: 2
 
 test:
   tags:
-    - baremetal-linux
+    - linux
   stage: tests_bundle
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=test
+  retry:
+    max: 2
 
 build:
   tags:
-    - baremetal-linux
+    - linux
   stage: tests_bundle
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=cra-build
   artifacts:
     paths:
       - build/
+  retry:
+    max: 2
 
 integration-tests:
   tags:
-    - baremetal-linux
+    - linux
   stage: pre_release
   image: circleci/node:12.13-browsers
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
+  retry:
+    max: 2
 
 build_release:
   tags:
-    - baremetal-linux
+    - linux
   stage: pre_release
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=module-build
   artifacts:
     paths:
       - build/
+  retry:
+    max: 2
 
 release:
   tags:
-    - baremetal-linux
+    - linux
   stage: release
   image: git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:latest
   services:
