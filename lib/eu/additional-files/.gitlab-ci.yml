@@ -7,7 +7,8 @@ variables:
 stages:
   - install_dependencies
   - tests_bundle
-  - pre_release
+  - integration_tests
+  - build_module
   - release
 
 install_dependencies:
@@ -55,7 +56,7 @@ build:
 integration-tests:
   tags:
     - linux
-  stage: pre_release
+  stage: integration_tests
   image: circleci/node:12.13-browsers
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
@@ -65,7 +66,7 @@ integration-tests:
 build_release:
   tags:
     - linux
-  stage: pre_release
+  stage: build_module
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=module-build
   artifacts:
