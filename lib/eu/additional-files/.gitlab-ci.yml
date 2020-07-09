@@ -55,7 +55,7 @@ build:
 
 integration-tests:
   tags:
-    - linux
+    - baremetal-linux
   stage: integration_tests
   image: circleci/node:12.13-browsers
   script:
