@@ -26,6 +26,8 @@ COPY config /app/config
 COPY public /app/public
 COPY cli /app/cli
 COPY src /app/src
+COPY build /app/build
+COPY node_modules /app/node_modules
 
 RUN npx npm-force-resolutions
 RUN npm install --only=prod
