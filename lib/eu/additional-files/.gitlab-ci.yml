@@ -79,7 +79,7 @@ release:
   tags:
     - linux
   stage: release
-  image: git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:latest
+  image: git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:release-v1-stable
   services:
     - docker:dind
   only:
