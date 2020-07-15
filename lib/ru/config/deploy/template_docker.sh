@@ -29,10 +29,6 @@ COPY src /app/src
 COPY build /app/build
 COPY node_modules /app/node_modules
 
-RUN npx npm-force-resolutions
-RUN npm install --only=prod
-RUN node cli/_utils/ci-utils/executor.js --command=build
-
 EXPOSE 80
 
 CMD node config/deploy/make-runtime-config.js && node config/production-server/static.js
