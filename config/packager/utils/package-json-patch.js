@@ -27,6 +27,10 @@ module.exports.packageJsonPatch = async parameter => {
         ...packageJsonProjectFile.devDependencies,
         ...commandsFile.devDependencies,
       },
+      peerDependencies: {
+        ...packageJsonProjectFile.peerDependencies,
+        ...commandsFile.peerDependencies,
+      },
       resolutions: {
         ...packageJsonProjectFile.resolutions,
         ...commandsFile.resolutions,

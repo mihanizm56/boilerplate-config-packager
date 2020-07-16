@@ -98,6 +98,7 @@
     "testcafe": "1.8.5",
     "ts-jest": "25.0.0"
   },
+  "peerDependencies": {},
   "browserslist": {
     "production": [
       "last 30 chrome version",
