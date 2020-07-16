@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@mihanizm56/fetch-api": "3.3.14",
-    "@wildberries/redux-core-modules": "0.0.24",
+    "@wildberries/redux-core-modules": "0.0.25",
     "@wildberries/service-router": "0.0.18",
     "@babel/runtime": "7.7.6",
     "@hapi/joi": "17.1.1",
