@@ -10,6 +10,7 @@
     "@wildberries/webpack-config-stream": "0.0.5",
     "@wildberries/service-suppliers": "0.0.2-beta.9",
     "@wildberries/i18next-utils": "0.0.4",
+    "@wildberries/notifications": "0.0.9",
     "babel-polyfill": "6.26.0",
     "js-file-download": "0.4.11",
     "classnames": "2.2.6",
@@ -97,8 +98,7 @@
     "redux-devtools-extension": "2.13.8",
     "redux-saga": "1.1.1",
     "react-router5": "7.1.0",
-    "router5": "7.0.2",
-    "@wildberries/notifications": "0.0.9"
+    "router5": "7.0.2"
   },
   "browserslist": {
     "production": [
