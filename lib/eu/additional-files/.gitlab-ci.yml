@@ -20,8 +20,6 @@ install_dependencies:
   artifacts:
     paths:
       - node_modules/
-  retry:
-    max: 2
 
 lint:
   tags:
@@ -29,8 +27,6 @@ lint:
   stage: tests_bundle
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=lint-full
-  retry:
-    max: 2
 
 test:
   tags:
@@ -38,8 +34,6 @@ test:
   stage: tests_bundle
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=test
-  retry:
-    max: 2
 
 build:
   tags:
@@ -50,8 +44,6 @@ build:
   artifacts:
     paths:
       - build/
-  retry:
-    max: 2
 
 integration-tests:
   tags:
@@ -60,8 +52,6 @@ integration-tests:
   image: circleci/node:12.13-browsers
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
-  retry:
-    max: 2
 
 build_release:
   tags:
@@ -72,8 +62,6 @@ build_release:
   artifacts:
     paths:
       - build/
-  retry:
-    max: 2
 
 release:
   tags:
