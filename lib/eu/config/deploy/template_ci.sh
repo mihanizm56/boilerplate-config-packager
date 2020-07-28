@@ -1,12 +1,12 @@
 #!/bin/bash
 
-UNIT=infrastructure
+UNIT='suppliers-portal-eu'
 PROJECT_NAME=$3
 REPO_NAME=$1
 DEPLOY_TOKEN=$2
-NAMESPACE=$REPO_NAME
-KLUSTER_ARRAY=($4 $5 $6 $7)
-IS_WITHOUT_COMMIT=$8
+NAMESPACE=$4
+KLUSTER_ARRAY=($5 $6 $7 $8)
+IS_WITHOUT_COMMIT=$9
 VERSION=v0.0.1
 
 PREV_TAG=$(git describe --abbrev=0 --tags)
@@ -48,10 +48,10 @@ then
   exit 2
 fi
 
-mkdir -p ./k8s/v1/${PROJECT_NAME}/base/
-mkdir -p ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}
+mkdir -p "./k8s/v1/${PROJECT_NAME}/base/"
+mkdir -p "./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}"
 
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/deployment.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/base/deployment.yaml"
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -103,12 +103,12 @@ spec:
   selector:
     app: ${PROJECT_NAME}
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 443
+      targetPort: 443
   type: ClusterIP
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/gitlab-registry-secret.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/base/gitlab-registry-secret.yaml"
 apiVersion: v1
 kind: Secret
 metadata:
@@ -119,13 +119,13 @@ data:
 type: kubernetes.io/dockerconfigjson
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/base/kustomization.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/base/kustomization.yaml"
 resources:
   - deployment.yaml
   - gitlab-registry-secret.yaml
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/kustomization.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/kustomization.yaml"
 resources:
   - namespace.yaml
 bases:
@@ -134,7 +134,7 @@ patches:
   - patch.yaml
 _EOF_
 
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/namespace.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/namespace.yaml"
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -143,7 +143,7 @@ _EOF_
 
 if [  "$K8S_KLUSTER" == 'test' -o "$K8S_KLUSTER" == 'stage' ];
 then
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -155,7 +155,7 @@ spec:
   template:
     metadata:
       labels:
-        app: front
+        app: ${PROJECT_NAME}
         version: ${NEW_TAG}
     spec:
       containers:
@@ -175,7 +175,7 @@ fi
 
 if [  "$K8S_KLUSTER" == 'dataline' -o "$K8S_KLUSTER" == 'datapro' ];
 then
-cat << _EOF_ > ./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml
+cat << _EOF_ > "./k8s/v1/${PROJECT_NAME}/overlays/${K8S_KLUSTER}/patch.yaml"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -205,7 +205,7 @@ spec:
 _EOF_
 fi
 
-cat << _EOF_ > ./deploy-service-client.conf.yaml
+cat << _EOF_ > "./deploy-service-client.conf.yaml"
 ---
 deploy_service_address: http://api.deploy-service.svc.k8s.datapro
 deploy_service_auth_address: http://api.deploy-service.svc.k8s.datapro

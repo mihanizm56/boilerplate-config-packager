@@ -16,11 +16,7 @@ COPY utils /app/utils
 COPY config /app/config
 COPY cli /app/cli
 COPY src /app/src
-
-RUN npx npm-force-resolutions
-RUN npm install --only-prod
-RUN node cli/_utils/ci-utils/executor.js --command=build
-RUN node cli/_utils/ci-utils/executor.js --command=compress-build
+COPY build /app/build
 
 # prepare nginx config with pushed files
 RUN chmod +x /app/config/deploy/nginx-maker.sh
@@ -31,7 +27,7 @@ FROM fholzer/nginx-brotli
 RUN apk add --update bash
 
 # !!!!! FOR LOCAL TEST ONLY
-# COPY config/test-certs /certs
+COPY config/test-certs /certs
 # ENV CLUSTER test
 
 WORKDIR /usr/share/metadata/core
@@ -43,9 +39,8 @@ RUN rm -rf /etc/nginx/nginx.conf
 COPY --from=builder /app/config/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # deploy configs
-COPY --from=builder /app/build /usr/share/metadata/core/build
-COPY --from=builder /app/config/deploy/nginx-envs.sh /etc/deploy/nginx-envs.sh
-COPY --from=builder /app/config/deploy/start.sh /etc/deploy/start.sh
+COPY build /usr/share/metadata/core/build
+COPY config/deploy/start.sh /etc/deploy/start.sh
 
 EXPOSE 443
 

@@ -1,0 +1,4 @@
+/src/setupEnzyme.ts
+/.env
+/.vscode
+node_modules

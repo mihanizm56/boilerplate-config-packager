@@ -1,16 +1,14 @@
-image: node:12.13
-
+image: "node:12.13"
 variables:
-  DOCKER_HOST: tcp://localhost:2375
-  DOCKER_TLS_CERTDIR: ''
-
+  DOCKER_HOST: "tcp://localhost:2375"
+  DOCKER_TLS_CERTDIR: ""
 stages:
   - install_dependencies
   - tests_bundle
+  - cra_build
   - integration_tests
-  - build_module
+  - platform_build
   - release
-
 install_dependencies:
   tags:
     - linux
@@ -35,10 +33,17 @@ test:
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=test
 
-build:
+check_types:
   tags:
     - linux
   stage: tests_bundle
+  script:
+    - node ./cli/_utils/ci-utils/executor.js --command=check-types
+
+cra_build:
+  tags:
+    - linux
+  stage: cra_build
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=cra-build
   artifacts:
@@ -49,16 +54,16 @@ integration-tests:
   tags:
     - baremetal-linux
   stage: integration_tests
-  image: circleci/node:12.13-browsers
+  image: "circleci/node:12.13-browsers"
   script:
     - node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
-build_release:
+platform_build:
   tags:
     - linux
-  stage: build_module
+  stage: platform_build
   script:
-    - node ./cli/_utils/ci-utils/executor.js --command=module-build
+    - node ./cli/_utils/ci-utils/executor.js --command=platform-build
   artifacts:
     paths:
       - build/
@@ -67,12 +72,13 @@ release:
   tags:
     - linux
   stage: release
-  image: git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:release-v1-stable
+  image: >-
+    git.wildberries.ru:4567/infrastructure/deploy-service/deploy-service/client:release-v1-stable
   services:
-    - docker:dind
+    - "docker:dind"
   only:
     - tags
-    - /^v\d+\.\d+\.\d+(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/
+    - '/^v\d+\.\d+\.\d+(-[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$/'
   except:
     - branches
   script:
