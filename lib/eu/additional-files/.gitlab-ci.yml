@@ -63,7 +63,7 @@ platform_build:
     - linux
   stage: platform_build
   script:
-    - node ./cli/_utils/ci-utils/executor.js --command=platform-build
+    - node ./cli/_utils/ci-utils/executor.js --command=module-build
   artifacts:
     paths:
       - build/
