@@ -16,4 +16,4 @@ COPY config/deploy/nginx.conf /etc/nginx/nginx.conf
 COPY config/test-certs /certs
 
 # open port
-EXPOSE 80
+EXPOSE 443
