@@ -6,6 +6,6 @@ include:
   - project: 'suppliers-portal-eu/devops'
     file: '/templates/.prebuild.template.yml'
   - project: 'suppliers-portal-eu/devops'
-    file: '/templates/nodejs_module_front/.build.template.yml'
+    file: '/templates/nodejs_module_front/.build.make.yml'
   - project: 'suppliers-portal-eu/devops'
-    file: '/templates/.deploy.template.yml'
+    file: '/templates/nodejs_module_front/.deploy.template.yml'
