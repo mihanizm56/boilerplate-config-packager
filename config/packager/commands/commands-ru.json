@@ -70,7 +70,7 @@
     "npm-audit-resolver": "2.1.0",
     "prettier": "1.18.2",
     "source-map-explorer": "2.1.2",
-    "testcafe": "1.8.4",
+    "testcafe": "1.8.5",
     "ts-jest": "25.0.0",
     "@wildberries/eslint-config": "1.0.1",
     "@wildberries/stylelint-config": "1.0.0"
