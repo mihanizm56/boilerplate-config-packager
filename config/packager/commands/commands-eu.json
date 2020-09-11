@@ -15,7 +15,7 @@
     "@wildberries/service-suppliers": "0.0.2-beta.11",
     "@wildberries/service-user": "0.0.2-beta.1",
     "@wildberries/validators": "0.1.3",
-    "@wildberries/webpack-config-stream": "0.0.8",
+    "@wildberries/webpack-config-stream": "0.0.9",
     "babel-polyfill": "6.26.0",
     "classnames": "2.2.6",
     "colors": "1.4.0",
