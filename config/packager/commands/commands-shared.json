@@ -4,7 +4,7 @@
     "@mihanizm56/fetch-api": "3.3.17",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
-    "@wildberries/i18next-utils": "0.0.4",
+    "@wildberries/i18next-utils": "0.0.9",
     "@wildberries/redux-core-modules": "0.0.34",
     "@wildberries/service-router": "0.0.21-beta.13",
     "@wildberries/validators": "0.1.3",
