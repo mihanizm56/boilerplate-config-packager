@@ -14,6 +14,7 @@
     "@wildberries/service-router": "0.0.21-beta.13",
     "@wildberries/service-suppliers": "0.0.3-beta.1",
     "@wildberries/service-user": "0.0.3-beta.4",
+    "@wildberries/ui-kit": "0.0.1-beta.58",
     "@wildberries/validators": "0.1.3",
     "@wildberries/webpack-config-stream": "0.0.7",
     "babel-polyfill": "6.26.0",
