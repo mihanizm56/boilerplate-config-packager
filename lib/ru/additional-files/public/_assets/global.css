@@ -1,0 +1,40 @@
+@import "./external-normalize/normalize.css";
+
+html,
+body,
+#root {
+  background-color: #f2f2f2;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  display: block !important;
+}
+
+body {
+  position: relative;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+:root {
+  --overlay-animation-duration: "500ms";
+  --overlay-opacity: 1;
+}
+
+.wbpa-body__container {
+  display: flex !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

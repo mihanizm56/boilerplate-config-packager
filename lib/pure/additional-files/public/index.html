@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/_assets/favicon.ico" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/_assets/global.css" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <!-- or remove this if you want to use router5 title change and not static one per app -->
-  <title>Enter your title</title>
+  <title>Финансовые отчёты</title>
   <style>
     @font-face {
       font-display: swap;
@@ -132,8 +132,8 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <!-- uncomment if you are in the old ru mod -->
-  <!-- <script src="%PUBLIC_URL%/runtime-config.js"></script> -->
+  <div id="portal"></div>
+  <script src="%PUBLIC_URL%/runtime-config.js"></script>
   <div id="root">
     <div class="icon-layout" id='icon-layout'>
       <div class="loading-icon" id='loading-icon'>
@@ -150,8 +150,6 @@
       }
     </script>
   </div>
-  <!-- here we place the portal components -->
-  <div id="portal"></div>
 </body>
 
 </html>
