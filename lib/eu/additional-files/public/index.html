@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/_assets/favicon.ico" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!-- or remove this if you want to use router5 title change and not static one per app -->
+  <title>Enter your title</title>
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: latobold;
+      font-style: normal;
+      font-weight: 400;
+      src: url("/_assets/fonts/latobold.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: lato;
+      font-style: normal;
+      font-weight: 700;
+      src: url("/_assets/fonts/LatoRegular.woff2") format("woff2");
+    }
+  </style>
+  <link rel="preload" href="/_assets/fonts/latobold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/_assets/fonts/LatoRegular.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    .circular--modern {
+      animation: rotate 2s linear infinite;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: center center;
+      width: 100%;
+    }
+
+    .path--modern {
+      animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+      stroke: #6c11c9;
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+
+    .icon-layout {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .loading-icon {
+      margin: 0 auto;
+      position: relative;
+      width: 100px;
+    }
+
+    .loading-icon::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
+    .circular {
+      animation: rotate 2s linear infinite;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: center center;
+      width: 100%;
+    }
+
+    .path {
+      stroke: #6c11c9;
+      stroke-dasharray: 90, 200;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- uncomment if you are in the old ru mod -->
+  <!-- <script src="%PUBLIC_URL%/runtime-config.js"></script> -->
+  <div id="root">
+    <div class="icon-layout" id='icon-layout'>
+      <div class="loading-icon" id='loading-icon'>
+        <svg class="circular" id='circular' viewBox="25 25 50 50">
+          <circle id='path' class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+      </div>
+    </div>
+    <script>
+      var isNotIE11 = !Boolean(window.MSInputMethodContext) || !Boolean(document.documentMode);
+      if (isNotIE11) {
+        document.getElementById('circular').className.baseVal = "circular--modern"
+        document.getElementById('path').className.baseVal = "path--modern"
+      }
+    </script>
+  </div>
+  <!-- here we place the portal components -->
+  <div id="portal"></div>
+</body>
+
+</html>
