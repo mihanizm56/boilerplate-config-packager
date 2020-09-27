@@ -4,7 +4,7 @@
     "@hapi/joi": "17.1.1",
     "@material-ui/core": "4.9.2",
     "@material-ui/icons": "4.9.1",
-    "@mihanizm56/fetch-api": "3.3.17",
+    "@mihanizm56/fetch-api": "3.3.19",
     "@wildberries/notifications": "1.0.5",
     "@wildberries/confirm-modal-portal": "0.0.4",
     "@wildberries/redux-core-modules": "0.0.34",
