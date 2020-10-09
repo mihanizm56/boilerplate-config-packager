@@ -16,3 +16,4 @@ include:
       ENDPOINT_CONTRACTS: http://test/api/v1/contracts
       ENDPOINT_START_END_DATE_CONTRACTS: http://test/api/v1/startAndEndDate
       REACT_APP_ROUTER_PREFIX: /financial-report
+      PUBLIC_URL: /

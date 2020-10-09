@@ -9,3 +9,8 @@ include:
     file: '/templates/nodejs_module_front/.build.make.yml'
   - project: 'suppliers-portal-eu/devops'
     file: '/templates/.deploy.template.yml'
+
+.env:
+  variables:
+    REACT_APP_ROUTER_PREFIX: /ui-profile
+    PUBLIC_URL: /
