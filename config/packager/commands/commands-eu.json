@@ -140,7 +140,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
-      "pre-commit": "node ./cli/_utils/ci-utils/executor.js --command=test && node ./cli/_utils/ci-utils/executor.js --command=lint-full && git add . && node ./cli/_utils/ci-utils/executor.js --command=check-types && node ./cli/_utils/ci-utils/executor.js --command=cra-build && node ./cli/_utils/ci-utils/executor.js --command=integration-tests && node ./cli/_utils/ci-utils/executor.js --command=module-build",
+      "pre-commit": "node ./cli/_utils/ci-utils/executor.js --command=test && node ./cli/_utils/ci-utils/executor.js --command=lint-full && git add . && node ./cli/_utils/ci-utils/executor.js --command=check-types && node ./cli/_utils/ci-utils/executor.js --command=cra-build && node ./cli/_utils/ci-utils/executor.js --command=module-build",
       "prepare-commit-msg": "node config/git/prepare-commit.js"
     }
   }
