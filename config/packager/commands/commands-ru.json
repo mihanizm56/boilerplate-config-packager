@@ -126,7 +126,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
-      "pre-commit": "node cli/_utils/ci-utils/executor.js --command=check-full",
+      "pre-commit": "node ./cli/_utils/ci-utils/executor.js --command=test && node ./cli/_utils/ci-utils/executor.js --command=lint-full && git add . && node ./cli/_utils/ci-utils/executor.js --command=build",
       "prepare-commit-msg": "node config/git/prepare-commit.js"
     }
   }
