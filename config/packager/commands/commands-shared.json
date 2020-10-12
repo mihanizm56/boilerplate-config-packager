@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@hapi/joi": "17.1.1",
+    "@mihanizm56/webpack-magic-redux-modules": "0.0.3",
     "@mihanizm56/fetch-api": "3.3.22",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
