@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 const path = require('path');
-const colors = require('colors');
-const cliProgress = require('cli-progress');
 const Copier = require('@mihanizm56/node-file-copier');
 const { exec } = require('./utils/fs-promises');
 const { getConsoleArgs } = require('./utils/get-args');
@@ -37,35 +35,15 @@ const arrayToCopy = [
 
 const copier = new Copier({ arrayToCopy });
 
-const cliProgressBar = new cliProgress.SingleBar({
-  format: `CLI Progress |${colors.magenta('{bar}')}| {percentage}% || z`,
-  barCompleteChar: '\u2588',
-  barIncompleteChar: '\u2591',
-  hideCursor: true,
-});
-
-const cliRunner = cliProgressBar.create(100, 0, {
-  processName: 'directory preparation',
-});
-cliRunner.update(20);
-
 const runPackage = async () => {
   try {
     await exec('npm install @wildberries/boilerplate-config-packager');
 
-    cliRunner.update(30);
-
     copier.activate();
-
-    cliRunner.update(40);
 
     await packageJsonPatch(configFolderPrefix);
 
-    cliRunner.update(50);
-
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
-
-    cliRunner.update(100);
   } catch (error) {
     console.log('error when executing the package', error);
     process.exit(1);
