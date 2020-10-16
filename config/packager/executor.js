@@ -45,11 +45,10 @@ const cliProgressBar = new cliProgress.SingleBar({
   barIncompleteChar: '\u2591',
 });
 
+const cliRunner = cliProgressBar.create(100, 0);
+
 const runPackage = async () => {
   try {
-    const cliRunner = cliProgressBar.create(100, 0, {
-      processName: 'directory preparation',
-    });
     cliRunner.update(20);
 
     await exec('npm install @wildberries/boilerplate-config-packager');
