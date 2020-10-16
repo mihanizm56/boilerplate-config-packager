@@ -46,11 +46,10 @@ const cliProgressBar = new cliProgress.SingleBar({
 });
 
 const cliRunner = cliProgressBar.create(100, 0);
+cliRunner.update(20);
 
 const runPackage = async () => {
   try {
-    cliRunner.update(20);
-
     await exec('npm install @wildberries/boilerplate-config-packager');
     cliRunner.update(40);
 
