@@ -53,7 +53,7 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.3",
-    "@wildberries/eslint-config": "1.0.4",
+    "@wildberries/eslint-config": "1.0.5",
     "@wildberries/stylelint-config": "1.0.0",
     "express": "4.17.1",
     "http-errors": "1.7.3",
