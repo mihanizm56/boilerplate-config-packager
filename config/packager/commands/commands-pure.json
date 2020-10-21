@@ -2,14 +2,12 @@
   "dependencies": {
     "@hapi/joi": "17.1.1",
     "@mihanizm56/fetch-api": "3.3.22",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.3",
     "@wildberries/i18next-utils": "0.0.9",
     "@wildberries/confirm-modal-portal": "0.0.8",
     "@wildberries/notifications": "1.0.9",
     "@wildberries/service-router": "0.0.22",
     "@wildberries/validators": "0.1.4",
-    "@wildberries/ui-kit": "0.0.1-beta.58",
+    "@wildberries/ui-kit": "0.0.1-beta.66",
     "@wildberries/redux-core-modules": "0.1.0",
     "classnames": "2.2.6",
     "cross-env": "6.0.3",
@@ -37,6 +35,8 @@
     "typescript": "3.6.4"
   },
   "devDependencies": {
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
     "@commitlint/cli": "8.2.0",
     "@ffmpeg-installer/ffmpeg": "1.0.20",
     "@types/enzyme": "3.10.4",
