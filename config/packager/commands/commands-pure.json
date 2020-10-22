@@ -30,7 +30,6 @@
     "react-transition-group": "4.3.0",
     "customize-cra": "1.0.0",
     "customize-cra-react-refresh": "1.0.1",
-    "reselect": "4.0.0",
     "reset-css": "5.0.1",
     "typescript": "3.6.4"
   },
@@ -82,7 +81,8 @@
     "redux-devtools-extension": "2.13.8",
     "redux-saga": "1.1.1",
     "react-router5": "7.1.0",
-    "router5": "7.0.2"
+    "router5": "7.0.2",
+    "reselect": "4.0.0"
   },
   "browserslist": {
     "production": [
