@@ -73,7 +73,7 @@
     "source-map-explorer": "2.1.2",
     "testcafe": "1.8.5",
     "ts-jest": "25.0.0",
-    "@wildberries/eslint-config": "1.0.5",
+    "@wildberries/eslint-config": "1.0.6",
     "@wildberries/stylelint-config": "1.0.0"
   },
   "peerDependencies": {
@@ -103,7 +103,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
       "@wildberries"
     ]
   },

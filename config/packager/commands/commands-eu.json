@@ -63,7 +63,7 @@
     "cz-customizable": "6.2.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
-    "@wildberries/eslint-config": "1.0.5",
+    "@wildberries/eslint-config": "1.0.6",
     "@wildberries/stylelint-config": "1.0.0",
     "enzyme-to-json": "3.4.3",
     "express": "4.17.1",
@@ -117,7 +117,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
       "@wildberries"
     ]
   },
