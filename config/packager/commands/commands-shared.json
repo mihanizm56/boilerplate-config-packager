@@ -103,6 +103,7 @@
   },
   "eslintConfig": {
     "extends": [
+      "react-app",
       "@wildberries"
     ]
   },
