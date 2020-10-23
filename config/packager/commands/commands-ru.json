@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@babel/runtime": "7.7.6",
-    "@hapi/joi": "17.1.1",
     "@mihanizm56/fetch-api": "3.3.22",
     "@wildberries/confirm-modal-portal": "0.0.8",
     "@mihanizm56/webpack-magic-redux-modules": "0.0.4",
@@ -80,7 +79,8 @@
     "redux-saga": "1.1.1",
     "react-router5": "7.1.0",
     "router5": "7.0.2",
-    "reselect": "4.0.0"
+    "reselect": "4.0.0",
+    "@hapi/joi": "17.1.1"
   },
   "browserslist": {
     "production": [
