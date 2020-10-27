@@ -13,7 +13,6 @@
     "fast-text-encoding": "1.0.2",
     "react-app-polyfill": "1.0.6",
     "final-form": "4.18.6",
-    "i18next": "19.4.4",
     "lodash-es": "4.17.15",
     "compression-webpack-plugin": "4.0.0",
     "mini-css-extract-plugin": "0.8.0",
@@ -82,7 +81,8 @@
     "react-router5": "7.1.0",
     "router5": "7.0.2",
     "reselect": "4.0.0",
-    "@hapi/joi": "17.1.1"
+    "@hapi/joi": "17.1.1",
+    "i18next": "19.4.4"
   },
   "browserslist": {
     "production": [

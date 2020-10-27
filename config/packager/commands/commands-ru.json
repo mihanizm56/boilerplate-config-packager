@@ -14,7 +14,6 @@
     "classnames": "2.2.6",
     "compression": "1.7.4",
     "compression-webpack-plugin": "4.0.0",
-    "i18next": "19.4.4",
     "cross-env": "6.0.3",
     "normalize.css": "8.0.1",
     "dotenv": "8.2.0",
@@ -80,7 +79,8 @@
     "react-router5": "7.1.0",
     "router5": "7.0.2",
     "reselect": "4.0.0",
-    "@hapi/joi": "17.1.1"
+    "@hapi/joi": "17.1.1",
+    "i18next": "19.4.4"
   },
   "browserslist": {
     "production": [
