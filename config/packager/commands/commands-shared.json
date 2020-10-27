@@ -3,6 +3,7 @@
     "@mihanizm56/webpack-magic-redux-modules": "0.0.4",
     "@mihanizm56/fetch-api": "3.3.22",
     "@wildberries/i18next-utils": "0.0.9",
+    "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/confirm-modal-portal": "0.0.8",
     "@wildberries/notifications": "1.0.9",
     "@wildberries/service-router": "0.0.22",
