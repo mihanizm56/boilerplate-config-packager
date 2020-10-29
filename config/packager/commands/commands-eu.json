@@ -6,7 +6,7 @@
     "@mihanizm56/webpack-magic-redux-modules": "0.0.4",
     "@mihanizm56/webpack-stream-watcher": "0.0.3",
     "@wildberries/confirm-modal-portal": "0.0.8",
-    "@wildberries/i18next-utils": "0.0.9",
+    "@wildberries/i18next-utils": "0.0.10",
     "@wildberries/notifications": "1.0.9",
     "@wildberries/redux-core-modules": "0.1.2",
     "@wildberries/service-router": "0.0.22",

@@ -10,7 +10,7 @@
     "@wildberries/ui-kit": "0.0.1-beta.66",
     "@wildberries/validators": "0.1.4",
     "@wildberries/service-router": "0.0.22",
-    "@wildberries/i18next-utils": "0.0.9",
+    "@wildberries/i18next-utils": "0.0.10",
     "babel-polyfill": "6.26.0",
     "classnames": "2.2.6",
     "compression": "1.7.4",
