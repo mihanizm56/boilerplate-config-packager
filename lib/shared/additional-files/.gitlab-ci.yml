@@ -4,53 +4,19 @@ variables:
   DOCKER_HOST: tcp://localhost:2375
   DOCKER_TLS_CERTDIR: ""
 
-stages:
-  - install_dependencies
-  - tests_bundle
-  - integration_tests
-  - release
+  stages:
+    - frontend_complex
+    - release
 
-install_dependencies:
+frontend_complex:
   tags:
-    - baremetal-linux
-  stage: install_dependencies
+    - linux
+  stage: frontend_complex
   script:
-    - npm ci
-  artifacts:
-    paths:
-      - node_modules/
-
-lint:
-  tags:
-    - baremetal-linux
-  stage: tests_bundle
-  script:
-    - node ./cli/_utils/ci-utils/executor.js --command=lint-full
-
-test:
-  tags:
-    - baremetal-linux
-  stage: tests_bundle
-  script:
-    - node ./cli/_utils/ci-utils/executor.js --command=test
-
-build:
-  tags:
-    - baremetal-linux
-  stage: tests_bundle
-  script:
-    - node ./cli/_utils/ci-utils/executor.js --command=build
+    - npm ci && node cli/_utils/ci-utils/precommit-runner/runner.js
   artifacts:
     paths:
       - build/
-
-integration-tests:
-  tags:
-    - baremetal-linux
-  stage: integration_tests
-  image: circleci/node:12.13-browsers
-  script:
-    - sudo node ./cli/_utils/ci-utils/executor.js --command=integration-tests
 
 release:
   tags:
