@@ -4,7 +4,7 @@
     "@mihanizm56/fetch-api": "3.3.22",
     "@wildberries/confirm-modal-portal": "0.0.8",
     "@mihanizm56/react-final-form-utils": "0.0.4",
-    "@mihanizm56/webpack-magic-redux-modules": "0.0.4",
+    "@mihanizm56/webpack-magic-redux-modules": "0.0.5",
     "@wildberries/notifications": "1.0.9",
     "@wildberries/redux-core-modules": "0.1.2",
     "@wildberries/ui-kit": "0.0.1-beta.66",

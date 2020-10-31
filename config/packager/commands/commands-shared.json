@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@mihanizm56/webpack-magic-redux-modules": "0.0.4",
+    "@mihanizm56/webpack-magic-redux-modules": "0.0.5",
     "@mihanizm56/fetch-api": "3.3.22",
     "@wildberries/i18next-utils": "0.0.10",
     "@mihanizm56/react-final-form-utils": "0.0.4",
