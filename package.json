@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/boilerplate-config-packager",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "boilerplate cli-executor",
   "scripts": {
     "lint": "npx eslint ./config/packager --ext .js --fix",
@@ -51,5 +51,12 @@
     "config/packager/",
     "node_modules/@mihanizm56/node-file-copier/"
   ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
+      "pre-commit": "npm run lint && git add .",
+      "prepare-commit-msg": "node ./config/git/prepare-commit.js"
+    }
+  },
   "bin": "config/packager/executor.js"
 }
