@@ -5,7 +5,7 @@ RESULT_STRING=""
 ALL_ENVS=$(awk "END { for (name in ENVIRON) { print name; }}" < /dev/null)
 
 oldIFS="$IFS"
-IFS='' FILTERED_ENVS=($(</usr/share/metadata/core/config/deploy/frontend-envs.sh))
+IFS='' FILTERED_ENVS=($(</usr/share/metadata/core/config/deploy/runtime-envs/frontend-envs.sh))
 IFS="$oldIFS"
 
 for ENV_NAME in $ALL_ENVS

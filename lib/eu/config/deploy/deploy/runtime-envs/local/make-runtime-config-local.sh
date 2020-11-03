@@ -2,14 +2,14 @@
 
 rm -fr build/runtime-config.js
 
-source config/deploy/local/local-window-endpoints.env
+source config/deploy/runtime-envs/local/local-window-endpoints.env
 
 ALL_ENVS=$(awk "END { for (name in ENVIRON) { print name; }}" < /dev/null)
 
 RESULT_STRING=""
 
 oldIFS="$IFS"
-IFS='' FILTERED_ENVS=($(<config/deploy/frontend-envs.sh))
+IFS='' FILTERED_ENVS=($(<config/deploy/runtime-envs/frontend-envs.sh))
 IFS="$oldIFS"
 
 for ENV_NAME in $ALL_ENVS

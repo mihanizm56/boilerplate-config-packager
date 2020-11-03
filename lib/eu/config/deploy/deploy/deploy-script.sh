@@ -10,6 +10,3 @@ git push --tags
 
 echo -en ""
 echo -en "Deployed tag: \e[40;1;42m $TAG \e[m\n"
-
-
-
