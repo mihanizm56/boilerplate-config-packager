@@ -2,7 +2,7 @@
 
 rm -fr build/runtime-config.js
 
-source config/deploy/runtime-envs/local/local-window-endpoints.env
+source config/deploy/runtime-envs/development/local-window-endpoints.env
 
 ALL_ENVS=$(awk "END { for (name in ENVIRON) { print name; }}" < /dev/null)
 

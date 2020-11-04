@@ -19,7 +19,7 @@ COPY config/test-certs /certs
 COPY config/deploy /usr/share/metadata/core/config/deploy
 
 # set roots to files
-RUN chmod +x /usr/share/metadata/core/config/deploy/runtime-envs/make-runtime-config.sh
+RUN chmod +x /usr/share/metadata/core/config/deploy/runtime-envs/production/make-runtime-config.sh
 
 # copy build artefacts
 COPY build /usr/share/metadata/core/build
