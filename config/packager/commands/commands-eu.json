@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@babel/runtime": "7.7.6",
-    "@mihanizm56/fetch-api": "3.3.22",
+    "@mihanizm56/fetch-api": "3.3.23",
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@mihanizm56/webpack-magic-redux-modules": "0.0.5",
     "@mihanizm56/webpack-stream-watcher": "0.1.1",
