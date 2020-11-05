@@ -5,7 +5,7 @@
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/confirm-modal-portal": "0.0.8",
     "@wildberries/notifications": "1.0.9",
-    "@wildberries/service-router": "0.0.22",
+    "@wildberries/service-router": "0.0.25",
     "@wildberries/validators": "0.1.4",
     "@wildberries/ui-kit": "0.0.1-beta.66",
     "@wildberries/redux-core-modules": "0.1.3",
