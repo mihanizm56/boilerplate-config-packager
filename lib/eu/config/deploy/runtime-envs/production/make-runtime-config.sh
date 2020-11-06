@@ -21,4 +21,4 @@ do
     done
 done
 
-echo $RESULT_STRING >> '/usr/share/metadata/core/build/runtime-config.js'
+echo $RESULT_STRING >> '/usr/share/metadata/core/build/umd/runtime-config.js'

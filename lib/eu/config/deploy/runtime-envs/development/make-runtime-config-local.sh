@@ -25,4 +25,4 @@ do
     done
 done
 
-echo $RESULT_STRING >> 'build/runtime-config.js'
+echo $RESULT_STRING >> 'build/umd/runtime-config.js'
