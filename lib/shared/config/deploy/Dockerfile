@@ -14,10 +14,8 @@ COPY utils /app/utils
 COPY cli /app/cli
 COPY src /app/src
 
-RUN npx npm-force-resolutions
-RUN npm install --only-prod
+RUN npm ci
 RUN node ./cli/_utils/ci-utils/executor.js --command=build
-RUN node ./cli/_utils/ci-utils/executor.js --command=compress-build
 
 # prepare nginx config with pushed files
 RUN chmod +x /app/config/deploy/nginx-maker.sh
