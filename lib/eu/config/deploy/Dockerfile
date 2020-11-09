@@ -24,8 +24,6 @@ RUN chmod +x /usr/share/metadata/core/config/deploy/runtime-envs/production/make
 # copy build artefacts
 COPY build /usr/share/metadata/core/build
 
-# RUN /usr/share/metadata/core/config/deploy/make-runtime-config.sh
-
 # open port
 EXPOSE 443
 
