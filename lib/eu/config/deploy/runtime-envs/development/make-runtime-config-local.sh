@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -fr build/runtime-config.js
+rm -fr build/umd/runtime-config.js
 
 source config/deploy/runtime-envs/development/local-window-endpoints.env
 
