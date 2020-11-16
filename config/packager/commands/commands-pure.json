@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@mihanizm56/fetch-api": "3.4.0",
+    "@mihanizm56/fetch-api": "3.4.1",
     "@wildberries/i18next-utils": "0.0.10",
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/confirm-modal-portal": "0.0.8",
