@@ -21,7 +21,8 @@ RUN node ./cli/_utils/ci-utils/executor.js --command=build
 RUN chmod +x /app/config/deploy/nginx-maker.sh
 RUN ["bash","/app/config/deploy/nginx-maker.sh", "/usr/share/metadata/core/build", "config/nginx/nginx.conf", "build"]
 
-FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/nginx-brotli:1.16.1
+FROM fholzer/nginx-brotli
+# FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/nginx-brotli:1.16.1
 
 RUN apk add --update bash
 

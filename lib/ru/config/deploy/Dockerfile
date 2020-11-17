@@ -1,4 +1,5 @@
-FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/node:12.13
+FROM node:12.13-alpine
+# FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/node:12.13-alpine
 
 ENV REACT_APP_ROUTER_PREFIX /mutual-settlements
 ENV PUBLIC_URL /
