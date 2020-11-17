@@ -1,5 +1,7 @@
-FROM fholzer/nginx-brotli
-# FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/nginx-brotli:1.16.1
+# FROM fholzer/nginx-brotli
+# для первого скачивания - сделать `docker login git.wildberries.ru:4567` 
+# пароль и юзернейм от учётки Вайлдберрис
+FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/nginx-brotli:1.16.1
 
 # add bash
 RUN apk add --update bash

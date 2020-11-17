@@ -1,5 +1,7 @@
-FROM node:12.13-alpine
-# FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/node:12.13-alpine
+# FROM node:12.13-alpine
+# для первого скачивания - сделать `docker login git.wildberries.ru:4567` 
+# пароль и юзернейм от учётки Вайлдберрис
+FROM git.wildberries.ru:4567/suppliers-portal-eu/devops/node:12.13-alpine
 
 ENV REACT_APP_ROUTER_PREFIX /mutual-settlements
 ENV PUBLIC_URL /
