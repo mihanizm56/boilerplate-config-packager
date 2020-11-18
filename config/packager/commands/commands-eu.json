@@ -11,7 +11,7 @@
     "@wildberries/databus-service-suppliers": "0.0.1",
     "@wildberries/notifications": "1.0.9",
     "@wildberries/redux-core-modules": "0.1.4",
-    "@wildberries/service-router": "0.0.27",
+    "@wildberries/service-router": "0.0.28",
     "@wildberries/ui-kit": "0.0.1-beta.75",
     "@wildberries/validators": "0.1.4",
     "@wildberries/webpack-config-stream": "0.0.15",
