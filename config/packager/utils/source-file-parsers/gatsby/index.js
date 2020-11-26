@@ -14,5 +14,5 @@ module.exports.processSourceFilesGatsby = async () => {
   // copy all unnecessary files and folders from local
   copier.activate();
 
-  additionalPatchPackageJson();
+  await additionalPatchPackageJson();
 };
