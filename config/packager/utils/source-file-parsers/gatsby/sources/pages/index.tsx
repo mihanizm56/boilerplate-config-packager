@@ -1,4 +1,4 @@
 import React from 'react';
-import { MainPage } from '../_pages/wb-eu-passport';
+import { MainPage } from '../_pages/main';
 
 export default () => <MainPage />;
