@@ -1,0 +1,40 @@
+@import "@/styles/media.module.scss";
+@import "@/styles/fonts.module.scss";
+
+.formTextInput {
+  position: relative;
+
+  &Wrapper {
+    box-sizing: border-box;
+  }
+
+  &TitleContainer {
+    @include h5;
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &ErrorTextContainer {
+    @include h6;
+    height: 20px;
+    margin-top: 8px;
+  }
+}
+
+
+@media #{$mobile} {
+  .formTextInput {
+    &Wrapper {
+      width: 100%;
+    }
+
+    &TitleContainer {
+      @include h6;
+    }
+
+    &ErrorTextContainer {
+      @include h7;
+    }
+  }
+}

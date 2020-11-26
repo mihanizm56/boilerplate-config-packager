@@ -1,0 +1,147 @@
+@import "@/styles/fonts.module.scss";
+@import "@/styles/colors.module.scss";
+
+.text {
+  font-family: $SegoeFont;
+  text-transform: none !important;
+
+  &.size {
+    &-h1 {
+      @include h1;
+    }
+
+    &-h2 {
+      @include h2;
+    }
+
+    &-h2-smaller {
+      @include h2-smaller;
+    }
+
+    &-h3 {
+      @include h3;
+    }
+
+    &-h3-bold {
+      @include h3-bold;
+    }
+
+    &-h4 {
+      @include h4;
+    }
+
+    &-h4-bold {
+      @include h4-bold;
+    }
+
+    &-h5 {
+      @include h5;
+    }
+
+    &-h5-bold {
+      @include h5-bold;
+    }
+
+    &-h6 {
+      @include h6;
+    }
+
+    &-h6-bold {
+      @include h6-bold;
+    }
+
+    &-h7 {
+      @include h7;
+    }
+
+    &-h8 {
+      @include h8;
+    }
+  }
+
+  &.color {
+    &-Orange {
+      @include Orange;
+    }
+
+    &-DarkPurple {
+      @include DarkPurple;
+    }
+
+    &-Purple {
+      @include Purple;
+    }
+
+    &-SuperDuperLightPurple {
+      @include SuperDuperLightPurple;
+    }
+
+    &-Red {
+      @include Red;
+    }
+
+    &-LightRed {
+      @include LightRed;
+    }
+
+    &-LightYellow {
+      @include LightYellow;
+    }
+
+    &-LightBlue {
+      @include LightBlue;
+    }
+
+    &-Black {
+      @include Black;
+    }
+
+    &-RichGrey {
+      @include RichGrey;
+    }
+
+    &-Grey {
+      @include Grey;
+    }
+
+    &-LightGrey {
+      @include LightGrey;
+    }
+
+    &-GreyText {
+      @include GreyText;
+    }
+
+    &-GreyForm {
+      @include GreyForm;
+    }
+
+    &-GreyCheckbox {
+      @include GreyCheckbox;
+    }
+
+    &-White {
+      @include White;
+    }
+
+    &-GreyMidle {
+      @include GreyMidle;
+    }
+
+    &-Violet {
+      @include Violet;
+    }
+  }
+
+  &.isBold {
+    font-family: $SegoeFontBold;
+  }
+
+  &.isCentered {
+    text-align: center;
+  }
+
+  &.isUpperCase {
+    text-transform: uppercase !important;
+  }
+}

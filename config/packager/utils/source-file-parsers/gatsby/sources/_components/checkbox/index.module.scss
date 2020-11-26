@@ -1,0 +1,79 @@
+@import "@/styles/colors.module";
+
+.Checkbox {
+  box-sizing: border-box;
+  display: flex;
+
+  &__container {
+    height: 20px;
+    min-width: 20px;
+    user-select: none;
+
+    & input {
+      height: 0;
+      opacity: 0;
+      position: absolute;
+      width: 0;
+    }
+  }
+
+  &__text-container {
+    margin-left: 8px;
+  }
+
+  &__icon {
+    align-items: center;
+    border: 1px solid $GreyForm;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    width: 20px;
+
+    & svg {
+      display: none;
+    }
+  }
+}
+
+.Checkbox__container input:checked ~ .Checkbox__icon {
+  border: none;
+
+  svg {
+    display: block;
+    fill: $Violet;
+  }
+
+  &--interface {
+    background-color: $Violet;
+    border: 1px solid $Violet;
+
+    & svg {
+      display: block;
+      fill: $White;
+    }
+  }
+}
+
+.Checkbox__container input:focus {
+  & ~ .Checkbox__icon {
+    outline: auto;
+  }
+}
+
+.Checkbox__container input:disabled {
+  & ~ .Checkbox__icon {
+    cursor: auto;
+  }
+}
+
+.Checkbox .Checkbox__text-container--disabled {
+
+  & > span {
+    color: $GreyText;
+  }
+
+}
+

@@ -1,0 +1,41 @@
+@import "@/styles/colors.module.scss";
+@import "@/styles/variables.module.scss";
+@import "@/styles/keyframes.module.scss";
+
+.Overlay {
+  background-color: rgba(0, 0, 0, var(--overlay-opacity));
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: background-color var(--overlay-animation-duration);
+  z-index: 100;
+
+  &--absolute {
+    position: absolute;
+  }
+
+  &--whiteBackground {
+    background-color: rgba(255, 255, 255, var(--overlay-opacity));
+  }
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &--inherit {
+    background-color: inherit;
+  }
+
+  &--enter {
+    animation: fadeInOverlay var(--overlay-animation-duration) forwards;
+  }
+
+  &--exit {
+    animation: fadeOutOverlay var(--overlay-animation-duration) forwards;
+  }
+}
