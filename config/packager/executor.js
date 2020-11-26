@@ -38,14 +38,19 @@ const copier = new Copier({ arrayToCopy });
 
 const runPackage = async () => {
   try {
+    console.log('installing');
     await exec('npm install @wildberries/boilerplate-config-packager');
 
+    console.log('generate files');
     copier.activate();
 
+    console.log('update package.json');
     await packageJsonPatch(configFolderPrefix);
 
+    console.log('patching source files');
     await patchSourceFiles(flags);
 
+    console.log('uninstalling');
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
   } catch (error) {
     console.log('error when executing the package', error);
