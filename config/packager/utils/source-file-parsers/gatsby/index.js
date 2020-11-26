@@ -2,7 +2,7 @@ const remove = require('rmfr');
 const Copier = require('@mihanizm56/node-file-copier');
 const { removeSources, createSources } = require('./config');
 
-const copier = new Copier({ createSources });
+const copier = new Copier({ arrayToCopy: createSources });
 
 module.exports.processSourceFilesGatsby = async () => {
   // remove all unnecessary files and folders

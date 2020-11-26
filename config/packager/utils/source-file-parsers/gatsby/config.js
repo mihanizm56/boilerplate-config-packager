@@ -6,17 +6,11 @@ const pathToSource = path.join(process.cwd(), 'src');
 const pathToIndex = path.join(pathToSource, 'index.tsx');
 const pathToPagesFolder = path.join(pathToSource, 'pages');
 const pathToLayoutsFolder = path.join(pathToSource, '_layouts');
-const pathToUtilsFolder = path.join(process.cwd(), 'utils');
 
 // create sources
 const pathToLocalSources = path.join(__dirname, 'sources');
 
 module.exports = {
-  removeSources: [
-    pathToIndex,
-    pathToPagesFolder,
-    pathToLayoutsFolder,
-    pathToUtilsFolder,
-  ],
+  removeSources: [pathToIndex, pathToPagesFolder, pathToLayoutsFolder],
   createSources: [{ from: pathToLocalSources, to: pathToSource }],
 };
