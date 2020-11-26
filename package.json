@@ -1,6 +1,6 @@
 {
   "name": "@wildberries/boilerplate-config-packager",
-  "version": "0.2.45",
+  "version": "0.2.46",
   "description": "boilerplate cli-executor",
   "scripts": {
     "lint": "npx eslint ./config/packager --ext .js --fix",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@mihanizm56/node-file-copier": "0.0.5",
     "mkdirp-promise": "5.0.1",
+    "rmfr": "2.0.0",
     "util": "0.12.2"
   },
   "devDependencies": {

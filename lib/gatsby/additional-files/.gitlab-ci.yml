@@ -1,0 +1,11 @@
+include:
+  - project: 'suppliers-portal-eu/devops'
+    file: '/templates/.stages.template.yml'
+  - project: 'suppliers-portal-eu/devops'
+    file: '/templates/.variables.template.yml'
+  - project: 'suppliers-portal-eu/devops'
+    file: '/templates/.prebuild.template.yml'
+  - project: 'suppliers-portal-eu/devops'
+    file: '/templates/nodejs_module_front/.build.make.yml'
+  - project: 'suppliers-portal-eu/devops'
+    file: '/templates/nodejs_module_front/.deploy.template.yml'

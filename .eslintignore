@@ -1,2 +1,3 @@
 node_modules/
 lib/**/.*
+config/packager/utils/source-file-parsers/gatsby/sources

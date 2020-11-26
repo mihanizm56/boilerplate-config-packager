@@ -1,0 +1,49 @@
+@import "@/styles/colors.module.scss";
+
+@mixin reset-default-styles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* stylelint-disable */
+
+@mixin drop-default-search-icon {
+  input[type="text"]::-ms-clear { display: none; height: 0; width: 0; }
+  input[type="text"]::-ms-reveal { display: none; height: 0; width: 0; }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
+}
+
+/* stylelint-enable */
+
+@mixin pagination-button-desktop {
+  background-color: $White;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 35px;
+  min-width: 29px;
+  outline: none;
+  transition: .3s;
+
+  &:focus {
+    background-color: $SuperDuperLightPurple;
+  }
+
+  &:active {
+    background-color: $SuperDuperLightPurple;
+  }
+
+  &.isSelected {
+    background-color: $DarkPurple;
+
+    & > span {
+      color: $White;
+    }
+  }
+}
+

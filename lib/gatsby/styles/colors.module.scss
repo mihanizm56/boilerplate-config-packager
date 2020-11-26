@@ -1,0 +1,29 @@
+
+// style-guide colors
+$Orange:#fc8441;
+$DarkPurple:#3a0078;
+$Purple:#6c11c9;
+$SuperDuperLightPurple:#f4f4f8;
+$Red:#f96666;
+$LightRed:#fde1dc;
+$LightYellow:#ffecc7;
+$LightBlue:#e4eaff;
+$Black:#000;
+$RichGrey:#565656;
+$Grey:#d5d5d5;
+$GreyText: #8b8b8b;
+$BrightGrey: #dcdcdc;
+$LightGrey:#f2f2f2;
+$GreyMidle:#646464;
+$GreyCheckbox:#ccc;
+$GreyForm: #d5d5d5;
+$White:#fff;
+$ScrollbarThumbColor:#808080;
+$Violet: #cb11ab;
+$lightenViolet: #fdeef9;
+// mixin-colors
+
+@mixin overlay-background {
+  background-color: $Black;
+  opacity: .37;
+}

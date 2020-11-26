@@ -1,0 +1,21 @@
+@import "../../styles/colors.module.scss";
+@import "../../styles/media.module";
+
+.Header {
+  background: linear-gradient(to right, $Violet 0%, #631174 65%, #481173 65%, #481173 100%);
+  line-height: 0;
+  padding: 25px 0;
+  text-align: center;
+  width: 100%;
+
+  svg {
+    width: 66%;
+  }
+}
+
+@media #{$mobile} {
+  .Header {
+    background: linear-gradient(to right, $Violet 0%, #631174 55%, #481173 55%, #481173 100%);
+    padding: 15px 0;
+  }
+}

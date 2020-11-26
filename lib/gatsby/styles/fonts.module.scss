@@ -1,0 +1,164 @@
+@import "@/styles/colors.module.scss";
+
+// families
+
+$SegoeFont: segoe, arial, sans-serif;
+$SegoeFontBold: segoebold, arial, sans-serif;
+
+// sizes
+
+@mixin h1 {
+  font-family: $SegoeFontBold;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+@mixin h2 {
+  font-family: $SegoeFontBold;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+@mixin h2-smaller {
+  font-family: $SegoeFontBold;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin h3 {
+  font-family: $SegoeFont;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin h3-bold {
+  font-family: $SegoeFontBold;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+
+@mixin h4 {
+  font-family: $SegoeFont;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin h4-bold {
+  font-family: $SegoeFontBold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+@mixin h5 {
+  font-family: $SegoeFont;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin h5-bold {
+  font-family: $SegoeFontBold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+
+@mixin h6 {
+  font-family: $SegoeFont;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin h6-bold {
+  font-family: $SegoeFontBold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin h7 {
+  font-family: $SegoeFont;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin h8 {
+  font-family: $SegoeFont;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+// color presets
+
+@mixin Orange {
+  color: $Orange;
+}
+
+@mixin DarkPurple {
+  color: $DarkPurple;
+}
+
+@mixin Purple {
+  color: $Purple;
+}
+
+@mixin SuperDuperLightPurple {
+  color: $SuperDuperLightPurple;
+}
+
+@mixin Red {
+  color: $Red;
+}
+
+@mixin LightRed {
+  color: $LightRed;
+}
+
+@mixin LightYellow {
+  color: $LightYellow;
+}
+
+@mixin LightBlue {
+  color: $LightBlue;
+}
+
+@mixin Black {
+  color: $Black;
+}
+
+@mixin RichGrey {
+  color: $RichGrey;
+}
+
+@mixin Grey {
+  color: $Grey;
+}
+
+@mixin LightGrey {
+  color: $LightGrey;
+}
+
+@mixin White {
+  color: $White;
+}
+
+@mixin GreyText {
+  color: $GreyText;
+}
+
+@mixin GreyForm {
+  color: $GreyForm;
+}
+
+@mixin GreyCheckbox {
+  color: $GreyCheckbox;
+}
+
+@mixin GreyMidle {
+  color: $GreyMidle;
+}
+
+@mixin Violet {
+  color: $Violet;
+}
+

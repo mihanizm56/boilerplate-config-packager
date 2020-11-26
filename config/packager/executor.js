@@ -6,6 +6,7 @@ const { exec } = require('./utils/fs-promises');
 const { getConsoleArgs } = require('./utils/get-args');
 const { packageJsonPatch } = require('./utils/package-json-patch');
 const { getConfigFolderPrefix } = require('./utils/get-config-folder-prefix');
+const { patchSourceFiles } = require('./utils/patch-source-Files');
 
 const flags = getConsoleArgs(process.argv);
 
@@ -42,6 +43,8 @@ const runPackage = async () => {
     copier.activate();
 
     await packageJsonPatch(configFolderPrefix);
+
+    await patchSourceFiles(flags);
 
     await exec('npm uninstall @wildberries/boilerplate-config-packager');
   } catch (error) {
