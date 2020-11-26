@@ -1,6 +1,9 @@
 const remove = require('rmfr');
 const Copier = require('@mihanizm56/node-file-copier');
 const { removeSources, createSources } = require('./config');
+const {
+  additionalPatchPackageJson,
+} = require('./additional-patch-package-json');
 
 const copier = new Copier({ arrayToCopy: createSources });
 
@@ -10,4 +13,6 @@ module.exports.processSourceFilesGatsby = async () => {
 
   // copy all unnecessary files and folders from local
   copier.activate();
+
+  additionalPatchPackageJson();
 };
