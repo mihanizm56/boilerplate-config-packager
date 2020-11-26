@@ -1,79 +1,44 @@
-import React, { Props, memo } from 'react';
-import classnames from 'classnames/bind';
-import styles from './index.module.scss';
+import React, { memo } from 'react';
+import classNames from 'classnames/bind';
+import style from './index.module.scss';
+import { FontSizeType, FontColorType, TagType } from './types';
 
-const cn = classnames.bind(styles);
+const cn = classNames.bind(style);
 
 type PropsType = {
-  text: string;
-  size?: FontSizeType;
-  color?: FontColorType;
-  isBold?: boolean;
-  isCentered?: boolean;
+  /** text color */
+  color: FontColorType;
+  /** text ellipsis flag */
+  isEllipsis?: boolean;
+  /** text case flag */
   isUpperCase?: boolean;
-  classname?: string;
-  dataFind?: string;
-} & Props<any>;
-
-export type FontSizeType =
-  | 'h1'
-  | 'h1-bold'
-  | 'h2'
-  | 'h2-bold'
-  | 'h3'
-  | 'h3-bold'
-  | 'h4'
-  | 'h4-bold'
-  | 'h5'
-  | 'h5-bold'
-  | 'h6'
-  | 'h6-bold'
-  | 'h7'
-  | 'h8';
-
-export type FontColorType =
-  | 'Orange'
-  | 'DarkPurple'
-  | 'Purple'
-  | 'SuperDuperLightPurple'
-  | 'Red'
-  | 'LightRed'
-  | 'LightYellow'
-  | 'LightBlue'
-  | 'Black'
-  | 'White'
-  | 'RichGrey'
-  | 'Grey'
-  | 'GreyText'
-  | 'GreyCheckbox'
-  | 'LightGrey'
-  | 'GreyMidle'
-  | 'Violet'
-  | 'SuccessTextColor';
+  /** text size type */
+  size: FontSizeType;
+  /** tag type */
+  tagType?: TagType;
+  /** text type */
+  text: string;
+};
 
 export const Text = memo(
   ({
-    text,
-    size,
     color,
-    isBold,
-    isCentered,
     isUpperCase,
-    classname,
-    dataFind,
+    size,
+    tagType: Tag = 'span',
+    text,
+    isEllipsis,
   }: PropsType) => (
-    <span
-      className={cn('text', {
-        [`size-${size}`]: Boolean(size),
-        [`color-${color}`]: Boolean(color),
-        isBold,
-        isCentered,
-        isUpperCase,
-        [classname]: Boolean(classname),
+    <Tag
+      className={cn('Text', {
+        [`Text--${size}`]: Boolean(size),
+        [`Text--${color}`]: Boolean(color),
+        'Text--uppercase': isUpperCase,
+        'Text--ellipsis': isEllipsis,
       })}
-      data-find={dataFind}
+      data-name="Text"
     >
       {text}
-    </span>
+    </Tag>
   ),
 );

@@ -5,18 +5,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import favicon from './static/favicon.ico';
-import segoeuiBoldWoff2 from './static/fonts/segoeui-bold.woff2';
-import segoeuiWoff2 from './static/fonts/segoeui.woff2';
-import segoeuiBoldWoff from './static/fonts/segoeui-bold.woff';
-import segoeuiWoff from './static/fonts/segoeui.woff';
+import latoRegularWoff2 from './static/fonts/latoregular.woff2';
+import latoBoldWoff2 from './static/fonts/latobold.woff2';
 
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes} lang="ru">
       <head>
         <meta charSet="utf-8" />
-        <meta content="ie=edge" httpEquiv="x-ua-compatible" />
-        <title>Паспорт</title>
+        <title>React Boilerplate</title>
         <meta
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
           name="viewport"
@@ -26,14 +23,7 @@ export default function HTML(props) {
         <link
           as="font"
           crossOrigin="anonymous"
-          href={segoeuiBoldWoff2}
-          rel="preload"
-          type="font/woff2"
-        />
-        <link
-          as="font"
-          crossOrigin="anonymous"
-          href={segoeuiWoff2}
+          href={latoRegularWoff2}
           rel="preload"
           type="font/woff2"
         />
@@ -41,16 +31,9 @@ export default function HTML(props) {
         <link
           as="font"
           crossOrigin="anonymous"
-          href={segoeuiWoff}
+          href={latoBoldWoff2}
           rel="preload"
-          type="font/woff"
-        />
-        <link
-          as="font"
-          crossOrigin="anonymous"
-          href={segoeuiBoldWoff}
-          rel="preload"
-          type="font/woff"
+          type="font/woff2"
         />
         {props.headComponents}
       </head>

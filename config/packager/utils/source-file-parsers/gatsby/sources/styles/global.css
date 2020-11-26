@@ -1,0 +1,41 @@
+@import-normalize;
+
+@font-face {
+  font-display: swap;
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../static/fonts/latoregular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "latobold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../static/fonts/latobold.woff2") format("woff2");
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  background-color: #f2f2f2;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --overlay-animation-duration: "500ms";
+  --overlay-opacity: .5;
+}

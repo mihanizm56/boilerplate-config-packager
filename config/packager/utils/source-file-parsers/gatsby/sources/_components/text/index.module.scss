@@ -1,147 +1,161 @@
-@import "@/styles/fonts.module.scss";
-@import "@/styles/colors.module.scss";
+@import "@/styles/variables.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/styles/mixins.module.scss";
 
-.text {
-  font-family: $SegoeFont;
-  text-transform: none !important;
+.Text {
+  margin: 0;
+  text-decoration: inherit;
+  text-transform: none;
 
-  &.size {
-    &-h1 {
-      @include h1;
-    }
+  &--h0 {
+    @include h0;
 
-    &-h2 {
-      @include h2;
-    }
-
-    &-h2-smaller {
-      @include h2-smaller;
-    }
-
-    &-h3 {
-      @include h3;
-    }
-
-    &-h3-bold {
-      @include h3-bold;
-    }
-
-    &-h4 {
-      @include h4;
-    }
-
-    &-h4-bold {
-      @include h4-bold;
-    }
-
-    &-h5 {
-      @include h5;
-    }
-
-    &-h5-bold {
-      @include h5-bold;
-    }
-
-    &-h6 {
-      @include h6;
-    }
-
-    &-h6-bold {
-      @include h6-bold;
-    }
-
-    &-h7 {
-      @include h7;
-    }
-
-    &-h8 {
-      @include h8;
+    @media (max-width: $max-mobile-width) {
+      @include h0-mobile;
     }
   }
 
-  &.color {
-    &-Orange {
-      @include Orange;
-    }
+  &--h1 {
+    @include h1;
 
-    &-DarkPurple {
-      @include DarkPurple;
-    }
-
-    &-Purple {
-      @include Purple;
-    }
-
-    &-SuperDuperLightPurple {
-      @include SuperDuperLightPurple;
-    }
-
-    &-Red {
-      @include Red;
-    }
-
-    &-LightRed {
-      @include LightRed;
-    }
-
-    &-LightYellow {
-      @include LightYellow;
-    }
-
-    &-LightBlue {
-      @include LightBlue;
-    }
-
-    &-Black {
-      @include Black;
-    }
-
-    &-RichGrey {
-      @include RichGrey;
-    }
-
-    &-Grey {
-      @include Grey;
-    }
-
-    &-LightGrey {
-      @include LightGrey;
-    }
-
-    &-GreyText {
-      @include GreyText;
-    }
-
-    &-GreyForm {
-      @include GreyForm;
-    }
-
-    &-GreyCheckbox {
-      @include GreyCheckbox;
-    }
-
-    &-White {
-      @include White;
-    }
-
-    &-GreyMidle {
-      @include GreyMidle;
-    }
-
-    &-Violet {
-      @include Violet;
+    @media (max-width: $max-mobile-width) {
+      @include h1-mobile;
     }
   }
 
-  &.isBold {
-    font-family: $SegoeFontBold;
+  &--h2 {
+    @include h2;
+
+    @media (max-width: $max-mobile-width) {
+      @include h2-mobile;
+    }
   }
 
-  &.isCentered {
-    text-align: center;
+  &--h3 {
+    @include h3;
+
+    @media (max-width: $max-mobile-width) {
+      @include h3-mobile;
+    }
   }
 
-  &.isUpperCase {
+  &--h4 {
+    @include h4;
+
+    @media (max-width: $max-mobile-width) {
+      @include h4-mobile;
+    }
+  }
+
+  &--h5 {
+    @include h5;
+
+    @media (max-width: $max-mobile-width) {
+      @include h5-mobile;
+    }
+  }
+
+  &--h6 {
+    @include h6;
+
+    @media (max-width: $max-mobile-width) {
+      @include h6-mobile;
+    }
+  }
+
+  &--orange {
+    color: $Orange;
+  }
+
+  &--darkPurple {
+    color: $DarkPurple;
+  }
+
+  &--purple {
+    color: $Purple;
+  }
+
+  &--superDuperLightPurple {
+    color: $SuperDuperLightPurple;
+  }
+
+  &--superDuperLightGrey {
+    color: $SuperDuperLightGrey;
+  }
+
+  &--red {
+    color: $Red;
+  }
+
+  &--blue {
+    color: $Blue;
+  }
+
+  &--pink {
+    color: $Pink;
+  }
+
+  &--lightRed {
+    color: $LightRed;
+  }
+
+  &--lightYellow {
+    color: $LightYellow;
+  }
+
+  &--lightBlue {
+    color: $LightBlue;
+  }
+
+  &--paleBlue {
+    color: $PaleBlue;
+  }
+
+  &--black {
+    color: $Black;
+  }
+
+  &--richGrey {
+    color: $RichGrey;
+  }
+
+  &--grey {
+    color: $Grey;
+  }
+
+  &--lightGrey {
+    color: $LightGrey;
+  }
+
+  &--normalGrey {
+    color: $NormalGrey;
+  }
+
+  &--white {
+    color: $White;
+  }
+
+  &--yellow {
+    color: $Yellow;
+  }
+
+  &--successTextColor {
+    color: $SuccessTextColor;
+  }
+
+  &--uppercase {
     text-transform: uppercase !important;
+  }
+
+  &--ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &--inherit {
+    color: inherit;
   }
 }

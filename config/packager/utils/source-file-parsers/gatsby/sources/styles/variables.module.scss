@@ -1,0 +1,79 @@
+// animation
+$animation-fadeIn-duration: .3s;
+$animation-fadeOut-duration: .3s;
+$animation-fadeUp-duration: .3s;
+$animation-fadeIn-header-duration: .5s;
+$animation-fadeOut-header-duration: .5s;
+
+// layers
+
+@mixin layer-under {
+  z-index: -1;
+}
+
+@mixin layer-1 {
+  z-index: 10;
+}
+
+@mixin layer-2 {
+  z-index: 20;
+}
+
+@mixin layer-3 {
+  z-index: 30;
+}
+
+@mixin layer-4 {
+  z-index: 40;
+}
+
+@mixin layer-5 {
+  z-index: 50;
+}
+
+@mixin layer-full {
+  z-index: 99;
+}
+
+$SuccessButtonColor: #def1dd;
+$Orange: #ff773c;
+$DarkPurple: #3a0078;
+$Purple: #6c11c9;
+$SuperDuperLightPurple: #f4f4f8;
+$SuperDuperLightGrey: #f7f7fa;
+$Red: #f96666;
+$Blue: #5067de;
+$Pink: #f965cf;
+$LightRed: #fde1dc;
+$LightYellow: #ffecc7;
+$LightBlue: #e4eaff;
+$PaleBlue: #5382b0;
+$Black: #000;
+$RichGrey: #4e4e53;
+$Grey: #d1cfd7;
+$GreyDarker: #b8b6bf;
+$LightGrey: #f0f0f3;
+$White: #fff;
+$Yellow: #dac400;
+$ScrollbarThumbColor: #808080;
+$SuccessTextColor: #067b00;
+$CICD: #36363a;
+$CICDGrey: #77767e;
+$CICDGreyDarker: #57575f;
+$InputError: #fe3d3e;
+$OceanBlue: #5bcbcf;
+$DarkTheme: #414146;
+$DarkGrey: #343434;
+$TagGrey: #727279;
+$MainPressed: #c34100;
+$AccentBorderFocused: #27ae6d;
+$AccentPressed: #460099;
+$Cyan: #5bcbcf;
+$TabSeparatorGrey: #c4c4c4;
+$NormalGrey: #77767e;
+$Yalo: #fff731;
+$ButtonFocusDarkTheme: #23f2ff;
+$UserMenuProfile: #676542;
+
+$LatoFont: "lato",arial,sans-serif;
+$LatoFontBold: "latobold",arial,sans-serif;
