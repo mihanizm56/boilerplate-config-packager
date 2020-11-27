@@ -1,9 +1,9 @@
 @import-normalize;
 
-/* stylelint-disable */
+
 @font-face {
   font-display: swap;
-  font-family: "lato";
+  font-family: "lato"; /* stylelint-disable-line */
   font-style: normal;
   font-weight: 400;
   src: url("../static/fonts/latoregular.woff2") format("woff2");
@@ -11,7 +11,7 @@
 
 @font-face {
   font-display: swap;
-  font-family: "latobold";
+  font-family: "latobold"; /* stylelint-disable-line */
   font-style: normal;
   font-weight: 700;
   src: url("../static/fonts/latobold.woff2") format("woff2");
