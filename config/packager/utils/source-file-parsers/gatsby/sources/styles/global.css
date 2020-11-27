@@ -1,5 +1,6 @@
 @import-normalize;
 
+/* stylelint-disable */
 @font-face {
   font-display: swap;
   font-family: "lato";
@@ -15,6 +16,7 @@
   font-weight: 700;
   src: url("../static/fonts/latobold.woff2") format("woff2");
 }
+/* stylelint-enable */
 
 html,
 body,
