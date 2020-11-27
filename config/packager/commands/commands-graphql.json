@@ -1,0 +1,122 @@
+{
+  "dependencies": {
+    "@apollo/client": "3.2.5",
+    "@apollo/react-hooks": "4.0.0",
+    "@mihanizm56/react-final-form-utils": "0.0.4",
+    "@wildberries/service-router": "0.0.26",
+    "@wildberries/ui-kit": "0.0.1-beta.72",
+    "@wildberries/validators": "0.1.4",
+    "classnames": "2.2.6",
+    "compression-webpack-plugin": "4.0.0",
+    "cross-env": "6.0.3",
+    "customize-cra": "1.0.0",
+    "customize-cra-react-refresh": "1.0.1",
+    "final-form": "4.18.6",
+    "graphql": "15.3.0",
+    "graphql-subscriptions": "1.1.0",
+    "graphql-tools": "7.0.1",
+    "graphql.macro": "1.4.2",
+    "lodash-es": "4.17.15",
+    "mini-css-extract-plugin": "0.8.0",
+    "node-sass": "4.13.1",
+    "normalize.css": "8.0.1",
+    "progress-bar-webpack-plugin": "2.1.0",
+    "react": "16.14.0",
+    "react-app-polyfill": "1.0.6",
+    "react-app-rewired": "2.1.5",
+    "react-dev-utils": "10.2.0",
+    "react-dom": "16.14.0",
+    "react-final-form": "6.3.3",
+    "react-scripts": "3.4.3",
+    "react-transition-group": "4.3.0",
+    "reset-css": "5.0.1",
+    "subscriptions-transport-ws": "0.9.18",
+    "typescript": "3.6.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.2.0",
+    "@types/enzyme": "3.10.4",
+    "@types/jest": "24.9.1",
+    "@types/node": "12.11.7",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "@types/react-text-mask": "5.4.6",
+    "@wildberries/eslint-config": "1.0.7",
+    "@wildberries/stylelint-config": "1.0.0",
+    "apollo-server-express": "2.18.2",
+    "body-parser": "1.19.0",
+    "commitizen": "4.0.4",
+    "compress": "0.99.0",
+    "concurrently": "5.2.0",
+    "colors": "1.4.0",
+    "cors": "2.8.5",
+    "cz-customizable": "6.2.0",
+    "dotenv": "8.2.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "enzyme-to-json": "3.4.3",
+    "express": "4.17.1",
+    "http-errors": "1.7.3",
+    "husky": "3.0.9",
+    "jest": "24.9.0",
+    "nodemon": "2.0.1",
+    "testcafe": "1.8.5",
+    "ts-jest": "25.0.0",
+    "uuid": "8.3.1"
+  },
+  "peerDependencies": {
+    "react-redux": "7.2.0",
+    "redux": "4.0.5",
+    "redux-batched-actions": "0.4.1",
+    "redux-devtools-extension": "2.13.8",
+    "redux-saga": "1.1.1",
+    "react-router5": "7.1.0",
+    "router5": "7.0.2",
+    "reselect": "4.0.0",
+    "@hapi/joi": "17.1.1",
+    "i18next": "19.4.4"
+  },
+  "browserslist": {
+    "production": [
+      "last 30 chrome version",
+      "last 30 firefox version",
+      "last 30 safari version",
+      "last 30 opera version",
+      "last 50 edge version"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version",
+      "last 3 opera version",
+      "last 1 edge version"
+    ]
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "0.8.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@wildberries"
+    ]
+  },
+  "stylelint": {
+    "extends": "@wildberries/stylelint-config"
+  },
+  "config-overrides-path": "config/webpack/rewired/config-overrides.js",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/git/commitizen.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g config/git/commitlint.js",
+      "pre-commit": "node cli/_utils/ci-utils/precommit-runner/runner.js",
+      "prepare-commit-msg": "node config/git/prepare-commit.js"
+    }
+  }
+}
