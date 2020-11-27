@@ -103,7 +103,7 @@
   "stylelint": {
     "extends": "@wildberries/stylelint-config"
   },
-  "config-overrides-path": "config/webpack/rewired/config-overrides.js",
+  "config-overrides-path": "config/webpack/config-overrides.js",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
