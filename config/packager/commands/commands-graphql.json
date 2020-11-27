@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@apollo/client": "3.2.5",
+    "@apollo/client": "3.3.1",
     "@apollo/react-hooks": "4.0.0",
     "@mihanizm56/react-final-form-utils": "0.0.4",
-    "@wildberries/service-router": "0.0.28",
     "@wildberries/i18next-utils": "0.0.14",
-    "@wildberries/ui-kit": "1.0.0",
+    "@wildberries/service-router": "0.0.28",
+    "@wildberries/ui-kit": "0.0.1-beta.72",
     "@wildberries/validators": "0.1.4",
     "classnames": "2.2.6",
     "compression-webpack-plugin": "4.0.0",
@@ -66,16 +66,9 @@
     "uuid": "8.3.1"
   },
   "peerDependencies": {
-    "react-redux": "7.2.0",
-    "redux": "4.0.5",
-    "redux-batched-actions": "0.4.1",
-    "redux-devtools-extension": "2.13.8",
-    "redux-saga": "1.1.1",
-    "react-router5": "7.1.0",
+    "i18next": "19.4.4",
     "router5": "7.0.2",
-    "reselect": "4.0.0",
-    "@hapi/joi": "17.1.1",
-    "i18next": "19.4.4"
+    "react-router5": "7.1.0"
   },
   "browserslist": {
     "production": [
