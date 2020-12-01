@@ -3,7 +3,7 @@ import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureRouter } from '@wildberries/service-router';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { App } from '@/_components/app';
 import { routes } from '@/pages/routes';
 import { createClient } from '@/_graphql';

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@apollo/client": "3.3.1",
+    "@apollo/client": "3.2.5",
     "@apollo/react-hooks": "4.0.0",
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/i18next-utils": "0.0.14",
