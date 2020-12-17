@@ -5,7 +5,7 @@
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/i18next-utils": "0.0.14",
     "@wildberries/service-router": "0.0.28",
-    "@wildberries/ui-kit": "0.0.1-beta.72",
+    "@wildberries/ui-kit": "1.0.2",
     "@wildberries/validators": "0.1.4",
     "classnames": "2.2.6",
     "compression-webpack-plugin": "4.0.0",
