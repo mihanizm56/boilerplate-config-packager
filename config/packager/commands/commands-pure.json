@@ -108,7 +108,8 @@
     "extends": "@wildberries/stylelint-config"
   },
   "resolutions": {
-    "mini-css-extract-plugin": "0.8.0"
+    "mini-css-extract-plugin": "0.8.0",
+    "@babel/types": "7.8.6"
   },
   "config-overrides-path": "config/webpack/config-overrides.js",
   "config": {

@@ -102,7 +102,8 @@
     ]
   },
   "resolutions": {
-    "mini-css-extract-plugin": "0.8.0"
+    "mini-css-extract-plugin": "0.8.0",
+    "@babel/types": "7.8.6"
   },
   "babel": {
     "extends": "./config/babel/babel.config.json"
