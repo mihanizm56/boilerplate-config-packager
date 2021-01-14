@@ -72,22 +72,6 @@
     "js-file-download": "0.4.11",
     "dotenv": "8.2.0"
   },
-  "browserslist": {
-    "production": [
-      "last 30 chrome version",
-      "last 30 firefox version",
-      "last 30 safari version",
-      "last 30 opera version",
-      "last 50 edge version"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 3 safari version",
-      "last 3 opera version",
-      "last 1 edge version"
-    ]
-  },
   "eslintConfig": {
     "extends": [
       "@wildberries"
@@ -118,6 +102,9 @@
       "prepare-commit-msg": "node config/git/prepare-commit.js"
     }
   },
+  "browserslist": [
+    "last 3 versions"
+  ],
   "scripts": {
     "start:production": "node ./build/server.js",
     "start": "npx cross-env NODE_ENV=development ssr-scripts start",
