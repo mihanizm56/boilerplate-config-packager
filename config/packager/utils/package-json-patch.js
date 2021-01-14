@@ -35,10 +35,12 @@ module.exports.packageJsonPatch = async parameter => {
         ...packageJsonProjectFile.resolutions,
         ...commandsFile.resolutions,
       },
-      browserslist: {
-        ...packageJsonProjectFile.browserslist,
-        ...commandsFile.browserslist,
-      },
+      browserslist: Array.isArray(commandsFile.browserslist)
+        ? commandsFile.browserslist
+        : {
+            ...packageJsonProjectFile.browserslist,
+            ...commandsFile.browserslist,
+          },
       babel: {
         ...packageJsonProjectFile.babel,
         ...commandsFile.babel,
