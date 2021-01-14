@@ -1,0 +1,10 @@
+@import "@/styles/base.scss";
+@import "@/styles/reset.scss";
+
+.root {
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 32px 20px;
+}

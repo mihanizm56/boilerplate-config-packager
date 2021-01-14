@@ -1,0 +1,21 @@
+@import "@/styles/base.scss";
+@import "@/styles/reset.scss";
+
+body {
+  background-color: #efefef;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-text-size-adjust: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  transition-delay: background-color 5000s, color 5000s;
+}
+
+.root {
+  background-color: #999;
+  margin: 20px;
+}

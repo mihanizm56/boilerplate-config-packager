@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "ssr-docker-pm2",
+      "script": "build/server.js",
+      "instances": "max",
+      "autorestart": true,
+      "max_memory_restart": "1G"
+    }
+  ]
+}
