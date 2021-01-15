@@ -1,5 +1,5 @@
-import 'core-js';
-import 'regenerator-runtime/runtime';
+// import 'core-js';
+// import 'regenerator-runtime/runtime';
 import deepForceUpdate from 'react-deep-force-update';
 import React from 'react';
 import ReactDOM, { hydrate, render } from 'react-dom';

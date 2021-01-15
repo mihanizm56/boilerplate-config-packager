@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 
-import 'core-js';
-import 'regenerator-runtime/runtime';
 import path from 'path';
 import dotenv from 'dotenv';
 // import helmet from 'helmet';
