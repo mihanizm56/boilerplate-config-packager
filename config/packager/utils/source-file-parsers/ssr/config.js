@@ -20,7 +20,7 @@ const pathToProxyFolder = path.join(pathToSource, 'setupProxy.js');
 // create sources
 const pathToLocalSources = path.join(__dirname, 'sources');
 const pathToStorybookConfig = path.join(__dirname, 'storybook-config');
-const pathToPublic = path.join(__dirname, 'public');
+const pathToPublic = path.join(__dirname, 'public-config');
 
 module.exports = {
   removeSources: [
