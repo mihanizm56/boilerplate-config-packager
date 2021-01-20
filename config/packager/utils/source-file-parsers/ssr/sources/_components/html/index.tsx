@@ -45,6 +45,29 @@ export const Html = ({
 
       <title>{title}</title>
 
+      <style
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: `
+            @font-face {
+              font-display: swap;
+              font-family: "lato";
+              font-style: normal;
+              font-weight: 700;
+              src: url("/static/fonts/LatoRegular.woff2") format("woff2");
+            }
+            `,
+        }}
+      />
+
+      <link
+        as="font"
+        crossOrigin="anonymous"
+        href="/static/fonts/LatoRegular.woff2"
+        rel="preload"
+        type="font/woff2"
+      />
+
       {description && <meta content={description} name="description" />}
       {keywords && <meta content={keywords} name="keywords" />}
       {canonical && <link href={canonical} rel="canonical" />}
@@ -64,12 +87,7 @@ export const Html = ({
         <link key={script} as="script" href={script} rel="preload" />
       ))}
       <link href="/static/favicon.ico" rel="shortcut icon" type="image/png" />
-      <link
-        as="font"
-        href="/static/fonts/LatoRegular.woff2"
-        rel="preload"
-        type="font/woff2"
-      />
+
       {styles.map((style) => (
         <link key={style} rel="stylesheet" href={style} /> // eslint-disable-line
       ))}

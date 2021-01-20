@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { ConnectedLink } from 'react-router5';
 import { Router } from 'router5';
-import { routerPrefetcher } from '@/_utils/router-prefetcher';
+import { routerPrefetcher } from '@/_utils/router-prefetcher/router-prefetcher';
 import s from './index.scss';
 
 type PropsType = PropsWithChildren<{ router: Router }>;

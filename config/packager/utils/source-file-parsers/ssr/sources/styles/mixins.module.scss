@@ -1,0 +1,112 @@
+@import "./constants.module.scss";
+
+@mixin reset-default-styles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* stylelint-disable */
+
+@mixin drop-default-search-icon {
+  input[type="text"]::-ms-clear { display: none; height: 0; width: 0; }
+  input[type="text"]::-ms-reveal { display: none; height: 0; width: 0; }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
+}
+/* stylelint-enable */
+// sizes
+
+@mixin h0 {
+  font-family: $LatoFontBold;
+  font-size: 50px;
+  line-height: 56px;
+}
+
+@mixin h0-mobile {
+  font-family: $LatoFontBold;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+@mixin h1 {
+  font-family: $LatoFontBold;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+@mixin h1-mobile {
+  font-family: $LatoFontBold;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin h2 {
+  font-family: $LatoFontBold;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin h2-mobile {
+  font-family: $LatoFontBold;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@mixin h3 {
+  font-family: $LatoFont;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin h3-mobile {
+  font-family: $LatoFont;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin h4 {
+  font-family: $LatoFont;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin h4-mobile {
+  font-family: $LatoFont;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin h5 {
+  font-family: $LatoFont;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@mixin h5-mobile {
+  font-family: $LatoFont;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@mixin h6 {
+  font-family: $LatoFontBold;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+@mixin h6-mobile {
+  font-family: $LatoFontBold;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+// mixin-colors
+
+@mixin overlay-background {
+  background-color: $Black;
+  opacity: .37;
+}

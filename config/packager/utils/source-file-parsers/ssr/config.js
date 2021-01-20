@@ -19,6 +19,7 @@ const pathToProxyFolder = path.join(pathToSource, 'setupProxy.js');
 
 // create sources
 const pathToLocalSources = path.join(__dirname, 'sources');
+const pathToStorybookConfig = path.join(__dirname, '.storybook');
 
 module.exports = {
   removeSources: [
@@ -36,5 +37,11 @@ module.exports = {
     pathToEnzymeFolder,
     pathToProxyFolder,
   ],
-  createSources: [{ from: pathToLocalSources, to: pathToSource }],
+  createSources: [
+    { from: pathToLocalSources, to: pathToSource },
+    {
+      from: pathToStorybookConfig,
+      to: process.cwd(),
+    },
+  ],
 };

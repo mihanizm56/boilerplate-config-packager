@@ -1,0 +1,161 @@
+@import "../../styles/constants.module.scss";
+@import "../../styles/media.module.scss";
+@import "../../styles/mixins.module.scss";
+
+.Text {
+  margin: 0;
+  text-decoration: inherit;
+  text-transform: none;
+
+  &--h0 {
+    @include h0;
+
+    @media (max-width: $max-mobile-width) {
+      @include h0-mobile;
+    }
+  }
+
+  &--h1 {
+    @include h1;
+
+    @media (max-width: $max-mobile-width) {
+      @include h1-mobile;
+    }
+  }
+
+  &--h2 {
+    @include h2;
+
+    @media (max-width: $max-mobile-width) {
+      @include h2-mobile;
+    }
+  }
+
+  &--h3 {
+    @include h3;
+
+    @media (max-width: $max-mobile-width) {
+      @include h3-mobile;
+    }
+  }
+
+  &--h4 {
+    @include h4;
+
+    @media (max-width: $max-mobile-width) {
+      @include h4-mobile;
+    }
+  }
+
+  &--h5 {
+    @include h5;
+
+    @media (max-width: $max-mobile-width) {
+      @include h5-mobile;
+    }
+  }
+
+  &--h6 {
+    @include h6;
+
+    @media (max-width: $max-mobile-width) {
+      @include h6-mobile;
+    }
+  }
+
+  &--orange {
+    color: $Orange;
+  }
+
+  &--darkPurple {
+    color: $DarkPurple;
+  }
+
+  &--purple {
+    color: $Purple;
+  }
+
+  &--superDuperLightPurple {
+    color: $SuperDuperLightPurple;
+  }
+
+  &--superDuperLightGrey {
+    color: $SuperDuperLightGrey;
+  }
+
+  &--red {
+    color: $Red;
+  }
+
+  &--blue {
+    color: $Blue;
+  }
+
+  &--pink {
+    color: $Pink;
+  }
+
+  &--lightRed {
+    color: $LightRed;
+  }
+
+  &--lightYellow {
+    color: $LightYellow;
+  }
+
+  &--lightBlue {
+    color: $LightBlue;
+  }
+
+  &--paleBlue {
+    color: $PaleBlue;
+  }
+
+  &--black {
+    color: $Black;
+  }
+
+  &--richGrey {
+    color: $RichGrey;
+  }
+
+  &--grey {
+    color: $Grey;
+  }
+
+  &--lightGrey {
+    color: $LightGrey;
+  }
+
+  &--normalGrey {
+    color: $NormalGrey;
+  }
+
+  &--white {
+    color: $White;
+  }
+
+  &--yellow {
+    color: $Yellow;
+  }
+
+  &--successTextColor {
+    color: $SuccessTextColor;
+  }
+
+  &--uppercase {
+    text-transform: uppercase !important;
+  }
+
+  &--ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &--inherit {
+    color: inherit;
+  }
+}
