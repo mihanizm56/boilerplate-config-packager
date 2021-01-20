@@ -12,7 +12,6 @@ const pathToComponentsFolder = path.join(pathToSource, '_components');
 const pathToUtilsFolder = path.join(pathToSource, '_utils');
 const pathToConstantsFolder = path.join(pathToSource, '_constants');
 const pathToStylesFolder = path.join(pathToSource, 'styles');
-const pathToPublicFolder = path.join(pathToSource, 'public');
 const pathToApiFolder = path.join(pathToSource, 'api');
 const pathToDTSFile = path.join(pathToSource, 'react-app-env.d.ts');
 const pathToEnzymeFolder = path.join(pathToSource, 'setupEnzyme.ts');
@@ -21,6 +20,7 @@ const pathToProxyFolder = path.join(pathToSource, 'setupProxy.js');
 // create sources
 const pathToLocalSources = path.join(__dirname, 'sources');
 const pathToStorybookConfig = path.join(__dirname, 'storybook-config');
+const pathToPublic = path.join(__dirname, 'public');
 
 module.exports = {
   removeSources: [
@@ -37,12 +37,15 @@ module.exports = {
     pathToDTSFile,
     pathToEnzymeFolder,
     pathToProxyFolder,
-    pathToPublicFolder,
   ],
   createSources: [
     { from: pathToLocalSources, to: pathToSource },
     {
       from: pathToStorybookConfig,
+      to: process.cwd(),
+    },
+    {
+      from: pathToPublic,
       to: process.cwd(),
     },
   ],
