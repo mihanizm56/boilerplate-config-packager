@@ -3,7 +3,7 @@
     "@babel/node": "7.8.7",
     "@babel/runtime": "7.9.6",
     "@mihanizm56/fetch-api": "3.5.1",
-    "@mihanizm56/ssr-scripts": "0.1.14",
+    "@mihanizm56/ssr-scripts": "0.2.0",
     "@mihanizm56/webpack-magic-redux-modules": "0.0.6",
     "@wildberries/i18next-utils": "1.0.0",
     "@wildberries/redux-core-modules": "1.0.1",

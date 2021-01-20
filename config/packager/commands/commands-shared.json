@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@mihanizm56/webpack-magic-redux-modules": "0.0.6",
-    "@mihanizm56/fetch-api": "3.4.4",
+    "@mihanizm56/fetch-api": "3.5.1",
     "@wildberries/redux-core-modules": "0.2.0",
     "@wildberries/ui-kit": "1.0.2",
     "@wildberries/i18next-utils": "0.0.14",
