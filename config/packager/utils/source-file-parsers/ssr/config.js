@@ -12,6 +12,7 @@ const pathToComponentsFolder = path.join(pathToSource, '_components');
 const pathToUtilsFolder = path.join(pathToSource, '_utils');
 const pathToConstantsFolder = path.join(pathToSource, '_constants');
 const pathToStylesFolder = path.join(pathToSource, 'styles');
+const pathToPublicFolder = path.join(pathToSource, 'public');
 const pathToApiFolder = path.join(pathToSource, 'api');
 const pathToDTSFile = path.join(pathToSource, 'react-app-env.d.ts');
 const pathToEnzymeFolder = path.join(pathToSource, 'setupEnzyme.ts');
@@ -36,6 +37,7 @@ module.exports = {
     pathToDTSFile,
     pathToEnzymeFolder,
     pathToProxyFolder,
+    pathToPublicFolder,
   ],
   createSources: [
     { from: pathToLocalSources, to: pathToSource },
