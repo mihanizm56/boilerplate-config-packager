@@ -99,7 +99,7 @@ http {
 			add_header Cache-Control "no-cache, no-store, must-revalidate, max-age=0";
 			add_header Pragma "no-cache";
 
-${FULL_PUSH_LIST}
+# ${FULL_PUSH_LIST} not necessary
 
 			try_files \$uri /index.html;
 		}
