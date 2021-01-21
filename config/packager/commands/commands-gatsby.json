@@ -6,7 +6,7 @@
     "@ungap/url-search-params": "0.2.2",
     "@wildberries/validators": "0.1.4",
     "abortcontroller-polyfill": "1.4.0",
-    "@wildberries/i18next-utils": "0.0.14",
+    "@wildberries/i18next-utils": "1.0.0",
     "body-parser": "1.19.0",
     "classnames": "2.2.6",
     "core-js": "3.6.5",
