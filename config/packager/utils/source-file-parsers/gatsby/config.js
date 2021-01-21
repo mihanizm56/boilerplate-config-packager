@@ -10,6 +10,7 @@ const pathToLayoutsFolder = path.join(pathToSource, '_layouts');
 const pathToTypesFile = path.join(pathToSource, 'react-app-env.d.ts');
 const pathToEnzymeFile = path.join(pathToSource, 'setupEnzyme.ts');
 const pathToProxyFile = path.join(pathToSource, 'setupProxy.js');
+const pathToUtilsFolder = path.join(pathToSource, '_utils');
 const pathToComponents = path.join(pathToSource, '_components');
 const pathToTypes = path.join(pathToSource, '_components');
 
@@ -27,6 +28,7 @@ module.exports = {
     pathToProxyFile,
     pathToTypes,
     pathToStylesFolder,
+    pathToUtilsFolder,
   ],
   createSources: [{ from: pathToLocalSources, to: pathToSource }],
 };
