@@ -30,7 +30,7 @@ export class App extends React.PureComponent<IProps, IState> {
         <ReduxProvider store={this.props.store}>
           <CookiesContext.Provider value={this.props.cookies}>
             <RouterProvider key={routerId} router={this.props.router}>
-              <RouteNode nodeName="">{({ Content }) => Content()}</RouteNode>
+              <RouteNode nodeName="">{({ content }) => content}</RouteNode>
             </RouterProvider>
           </CookiesContext.Provider>
         </ReduxProvider>
