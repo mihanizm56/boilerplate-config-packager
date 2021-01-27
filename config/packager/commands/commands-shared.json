@@ -7,7 +7,7 @@
     "@wildberries/i18next-utils": "1.0.0",
     "@mihanizm56/react-final-form-utils": "0.0.4",
     "@wildberries/confirm-modal-portal": "0.0.8",
-    "@wildberries/notifications": "1.0.9",
+    "@wildberries/notifications": "1.0.10",
     "@wildberries/service-router": "1.0.1-beta.3",
     "@wildberries/validators": "0.1.4",
     "classnames": "2.2.6",
